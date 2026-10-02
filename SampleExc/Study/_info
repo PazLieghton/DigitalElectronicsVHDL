@@ -1,0 +1,177 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Mpdelsim
+Ecompuertas
+Z0 w1790912198
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 8
+Z3 dC:/Users/pazli/Documents/Github/VHDL/SampleExc
+Z4 8C:/Users/pazli/Documents/Github/VHDL/SampleExc/compuertas.vhd
+Z5 FC:/Users/pazli/Documents/Github/VHDL/SampleExc/compuertas.vhd
+l0
+L4 1
+Voe2I=9kGP0dnVfYGonTmR1
+!s100 1k[`m20lJENG7Ogl7i0K60
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1790912783
+!i10b 1
+Z8 !s108 1790912783.000000
+Z9 !s90 -reportprogress|300|-work|Study|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/SampleExc/compuertas.vhd|
+Z10 !s107 C:/Users/pazli/Documents/Github/VHDL/SampleExc/compuertas.vhd|
+!i113 1
+Z11 o-work Study -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+Z13 DEx4 work 10 compuertas 0 22 oe2I=9kGP0dnVfYGonTmR1
+!i122 8
+l16
+L15 7
+VO:]W04loJ>f?6QW93gU9V2
+!s100 mBa^]c9ID4G[g_D98K5_01
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ereloj12h
+Z14 w1790912675
+R1
+R2
+!i122 11
+R3
+Z15 8C:/Users/pazli/Documents/Github/VHDL/SampleExc/reloj12h.vhd
+Z16 FC:/Users/pazli/Documents/Github/VHDL/SampleExc/reloj12h.vhd
+l0
+L23 1
+Vz1L5z^`j@AP2KdD1mKVbE2
+!s100 ^cl7Y:>3FU0@77ZW97?lI3
+R6
+32
+Z17 !s110 1790912784
+!i10b 1
+Z18 !s108 1790912784.000000
+Z19 !s90 -reportprogress|300|-work|Study|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/SampleExc/reloj12h.vhd|
+Z20 !s107 C:/Users/pazli/Documents/Github/VHDL/SampleExc/reloj12h.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z21 DEx4 work 8 reloj12h 0 22 z1L5z^`j@AP2KdD1mKVbE2
+!i122 11
+l60
+Z22 L46 198
+Z23 ViCZl:m1f0ACXd:QHZF=?C0
+Z24 !s100 m1V446:3;mCjk=j374BXm3
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Etb_compuertas
+Z25 w1790912209
+R1
+R2
+!i122 9
+R3
+Z26 8C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_compuertas.vhd
+Z27 FC:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_compuertas.vhd
+l0
+L5 1
+VL0D3Z>[G4=2GcFLIfQ>Q_2
+!s100 ;3M0Pf@66Ol0jVFI]AYTh2
+R6
+32
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-work|Study|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_compuertas.vhd|
+Z29 !s107 C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_compuertas.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R13
+R1
+R2
+DEx4 work 13 tb_compuertas 0 22 L0D3Z>[G4=2GcFLIfQ>Q_2
+!i122 9
+l11
+L8 44
+VZaTM01E]MF[[X]gm^<bb_0
+!s100 EFTXLIekW^oRTcQKE?1jf2
+R6
+32
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Etb_reloj12h
+Z30 w1790912676
+R1
+R2
+!i122 10
+R3
+Z31 8C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_reloj12h.vhd
+Z32 FC:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_reloj12h.vhd
+l0
+L7 1
+V5?bo0V28h2=IcD?UQ8kG90
+!s100 Q6iBXPU3_@]m8bG_h<J=K0
+R6
+32
+R17
+!i10b 1
+R8
+Z33 !s90 -reportprogress|300|-work|Study|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_reloj12h.vhd|
+Z34 !s107 C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_reloj12h.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R21
+R1
+R2
+DEx4 work 11 tb_reloj12h 0 22 5?bo0V28h2=IcD?UQ8kG90
+!i122 10
+l22
+L10 121
+V2bilWYLc=DOc4B7zJnSBV1
+!s100 f]>@@ZdJZGlJjh0;_<aSA1
+R6
+32
+R17
+!i10b 1
+R8
+R33
+R34
+!i113 1
+R11
+R12
