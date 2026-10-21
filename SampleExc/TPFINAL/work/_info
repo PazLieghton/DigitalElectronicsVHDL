@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL
+Emainsig
+Z1 w1792522691
+!i122 0
+R0
+Z2 8Input.vhd
+Z3 FInput.vhd
+l0
+L4 1
+V44fGlO3RlBDbo6Ik]:GHk1
+!s100 BeoA[fj>I^knF@H1bQ@Y42
+Z4 OV;C;2020.1;71
+32
+Z5 !s110 1792523784
+!i10b 1
+Z6 !s108 1792523784.000000
+Z7 !s90 -reportprogress|300|Input.vhd|
+Z8 !s107 Input.vhd|
+!i113 1
+Z9 tExplicit 1 CvgOpt 0
+Amainsig_arq
+DEx4 work 7 mainsig 0 22 44fGlO3RlBDbo6Ik]:GHk1
+!i122 0
+l28
+L12 34
+VKAG:jXhk3PMTG6eD=>o=A3
+!s100 :_[SX9NUZ?6ikS1glO_WT0
+R4
+32
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+Emainsig_tb
+Z10 w1792522614
+!i122 1
+R0
+Z11 8Input_tb.vhd
+Z12 FInput_tb.vhd
+l0
+L1 1
+VO[U_:n9eH7R>6KgAc?WGl0
+!s100 a>h`^_`a8^gDHF_fTZ3g23
+R4
+32
+Z13 !s110 1792523787
+!i10b 1
+Z14 !s108 1792523787.000000
+Z15 !s90 -reportprogress|300|Input_tb.vhd|
+!s107 Input_tb.vhd|
+!i113 1
+R9
+Amainsig_tb_arq
+DEx4 work 10 mainsig_tb 0 22 O[U_:n9eH7R>6KgAc?WGl0
+!i122 1
+l19
+L4 32
+VGL2VIoAJo1V2ZWGHT1ka<3
+!s100 @:<1hH17FX2NmBgkk`z=<1
+R4
+32
+R13
+!i10b 1
+R14
+R15
+Z16 !s107 Input_tb.vhd|
+!i113 1
+R9

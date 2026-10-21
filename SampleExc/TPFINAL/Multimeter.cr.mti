@@ -1,0 +1,24 @@
+C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd {1 {vcom -work TPFINAL -2002 -explicit -stats=none {C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\ffd.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity ffd
+-- Compiling architecture ffd_arq of ffd
+
+} {} {}} C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd {1 {vcom -work TPFINAL -2002 -explicit -stats=none {C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\Input.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity mainsig
+-- Compiling architecture mainsig_arq of mainsig
+
+} {} {}} C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input_tb.vhd {1 {vcom -work TPFINAL -2002 -explicit -stats=none C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity mainsig_tb
+-- Compiling architecture mainsig_tb_arq of mainsig_tb
+
+} {} {}} C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Vga.vhd {0 {vcom -work TPFINAL -2002 -explicit -stats=none C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Vga.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Vga.vhd(6): (vcom-1491) Empty source files.
+
+} {} {}}

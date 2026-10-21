@@ -1,0 +1,75 @@
+Código VHDL
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+
+entity detector_110 is
+  port (clk, rst, x : in std_logic; y : out std_logic);
+end entity;
+
+architecture behavioral of detector_110 is
+  signal q1, q0 : std_logic := '0';
+  signal d1, d0 : std_logic;
+begin
+  d0 <= x;
+  d1 <= q0 and (x or q1);
+  process(clk, rst)
+  begin
+    if rst = '1' then
+      q1 <= '0';
+      q0 <= '0';
+    elsif rising_edge(clk) then
+      q1 <= d1;
+      q0 <= d0;
+    end if;
+  end process;
+  y <= q1 and (not q0);
+end architecture;
+
+Testbench de comprobación
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_detector_110 is
+end entity;
+
+
+architecture sim of tb_detector_110 is
+  signal clk : std_logic := '0';
+  signal rst : std_logic := '1';
+  signal x   : std_logic := '0';
+  signal y   : std_logic;
+begin
+  dut: entity work.detector_110
+    port map (clk => clk, rst => rst, x => x, y => y);
+  clk <= not clk after 5 ns;
+  process
+    procedure enviar_bit(constant b : in std_logic) is
+    begin
+      wait until falling_edge(clk);
+      x <= b;
+      wait until rising_edge(clk);
+      wait for 1 ns;
+    end procedure;
+  begin
+    wait for 12 ns;
+    rst <= '0';
+    enviar_bit('1');
+    enviar_bit('1');
+    assert y = '0' report "Salida anticipada" severity error;
+    enviar_bit('0');
+    assert y = '1' report "Fallo en primer 110" severity error;
+    enviar_bit('1');
+    enviar_bit('1');
+    enviar_bit('0');
+    assert y = '1' report "Fallo en segundo 110" severity error;
+    enviar_bit('0');
+    assert y = '0' report "Salida no volvio a cero" severity error;
+    report "Prueba finalizada" severity note;
+    wait;
+  end process;
+end architecture;
+

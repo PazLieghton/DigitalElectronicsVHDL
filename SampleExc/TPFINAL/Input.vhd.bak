@@ -1,0 +1,27 @@
+-- Segmento de Clock 25Mhz
+-- Lo siguiente es el clock 25MHz, Testbench Funciona
+entity mainsig is
+    port (
+        clk    : in bit;
+        rst    : in bit;
+        clk_25 : out bit
+    );
+end mainsig;
+--De ahora en adelante mainsig y clk_25 va a ser el working clock :D
+architecture mainsig_arq of mainsig is
+    signal q_int : bit := '0'; -- Inicializo en 0
+    signal d_int : bit;
+begin
+    d_int <= not q_int;
+
+    process(clk, rst) -- Preguntar si se puede usar process
+    begin
+        if rst = '1' then
+            q_int <= '0';
+        elsif clk'event and clk = '1' then
+            q_int <= d_int;
+        end if;
+    end process;
+
+    clk_25 <= q_int;
+end mainsig_arq;

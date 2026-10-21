@@ -96,7 +96,7 @@ twentynm_hssi_ver = $MODEL_TECH/../altera/verilog/twentynm_hssi
 twentynm_hip_ver = $MODEL_TECH/../altera/verilog/twentynm_hip
 cyclone10lp_ver = $MODEL_TECH/../altera/verilog/cyclone10lp
 
-work = Study
+work = TPFINAL
 [vcom]
 ; VHDL93 variable selects language version as the default. 
 ; Default is VHDL-2002.
@@ -220,7 +220,7 @@ Resolution = ps
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 0 ps
+RunLength = 100 ps
 
 ; Maximum iterations that can be run without advancing simulation time
 IterationLimit = 5000
@@ -408,17 +408,21 @@ ConcurrentFileLimit = 40
 ;            can result in a corrupt MPF file.  All project properties
 ;            can be modified through project window dialogs.
 Project_Version = 6
-Project_DefaultLib = Study
+Project_DefaultLib = work
 Project_SortMethod = unused
-Project_Files_Count = 4
-Project_File_0 = C:/Users/pazli/Documents/Github/VHDL/SampleExc/reloj12h.vhd
-Project_File_P_0 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1790912675 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to Study compile_order 3 cover_nosub 0 dont_compile 0 vhdl_use93 2002
-Project_File_1 = C:/Users/pazli/Documents/Github/VHDL/SampleExc/compuertas.vhd
-Project_File_P_1 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1790912198 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to Study cover_noshort 0 compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
-Project_File_2 = C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_reloj12h.vhd
-Project_File_P_2 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1790912676 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to Study cover_noshort 0 compile_order 2 dont_compile 0 cover_nosub 0 vhdl_use93 2002
-Project_File_3 = C:/Users/pazli/Documents/Github/VHDL/SampleExc/tb_compuertas.vhd
-Project_File_P_3 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1790912209 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to Study compile_order 1 cover_nosub 0 dont_compile 0 vhdl_use93 2002
+Project_Files_Count = 6
+Project_File_0 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter.vhd
+Project_File_P_0 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1792525940 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 1 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 4 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_1 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd
+Project_File_P_1 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1792525303 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_2 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd
+Project_File_P_2 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1792525057 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 1 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_3 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd
+Project_File_P_3 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1792525958 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 1 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 5 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_4 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input_tb.vhd
+Project_File_P_4 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1792524548 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 2 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_5 = C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Vga.vhd
+Project_File_P_5 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 0 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 1 toggle - vhdl_warn5 1 compile_to TPFINAL cover_noshort 0 compile_order 3 dont_compile 0 cover_nosub 0 vhdl_use93 2002
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0

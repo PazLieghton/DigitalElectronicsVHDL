@@ -1,0 +1,593 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Mpdelsim
+Eand_gate
+Z0 w1790981918
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 77
+Z3 dC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc
+Z4 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/Test.vhd
+Z5 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/Test.vhd
+l0
+L4 1
+Ve:gBPCV1l7kPSSQJ:5e4G2
+!s100 ;dR4?O`hACn6=VALR_K_X2
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1791315268
+!i10b 1
+Z8 !s108 1791315268.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/Test.vhd|
+Z10 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/Test.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+DEx4 work 8 and_gate 0 22 e:gBPCV1l7kPSSQJ:5e4G2
+!i122 77
+l13
+L12 5
+Vo6OLTX4H@XbL:jHkHM]YM3
+!s100 096?TbDSD0oc4VM9AW@:o3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecompuertas
+Z13 w1791317137
+R1
+R2
+!i122 117
+R3
+Z14 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/compuertas.vhd
+Z15 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/compuertas.vhd
+l0
+L4 1
+V5Dc7fjGciQ4P]bSM6GGVA0
+!s100 VC[9JEHXAZ?b:RYOThHei2
+R6
+32
+Z16 !s110 1792191169
+!i10b 1
+Z17 !s108 1792191168.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/compuertas.vhd|
+Z19 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/compuertas.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z20 DEx4 work 10 compuertas 0 22 5Dc7fjGciQ4P]bSM6GGVA0
+!i122 117
+l16
+L15 7
+V[LVJFe;]f[dFBAe:lYOjm3
+!s100 mBa^]c9ID4G[g_D98K5_01
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Edetector_110
+Z21 w1791920313
+R1
+R2
+!i122 123
+R3
+Z22 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/ClaseContador.vhd
+Z23 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/ClaseContador.vhd
+l0
+L6 1
+VBhYE`@>kLI4Ga34`hFmJT1
+!s100 cW<7IVdH:TIIW9ck>9`z>0
+R6
+32
+Z24 !s110 1792191171
+!i10b 1
+Z25 !s108 1792191170.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/ClaseContador.vhd|
+Z27 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/ClaseContador.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z28 DEx4 work 12 detector_110 0 22 BhYE`@>kLI4Ga34`hFmJT1
+!i122 123
+l13
+Z29 L10 18
+Z30 V6MUcnS;L92=?;6DYk0Z2e0
+Z31 !s100 NhZfI7DI=k<U<1Q852WGK2
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R11
+R12
+Emux2
+Z32 w1790980561
+R1
+R2
+!i122 15
+R3
+R4
+R5
+l0
+L4 1
+VQl@:hl_b?WH8m=<TXB_[M3
+!s100 OX^glU:U?RheXnB5AGY`=3
+R6
+32
+Z33 !s110 1790980846
+!i10b 1
+Z34 !s108 1790980846.000000
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 4 mux2 0 22 Ql@:hl_b?WH8m=<TXB_[M3
+!i122 15
+l12
+L11 11
+ViI:A=mR98LfF5UPPGCVWo3
+!s100 h>KLL<;OTV8fM8:>jzKKh2
+R6
+32
+R33
+!i10b 1
+R34
+R9
+R10
+!i113 1
+R11
+R12
+Ereloj12h
+Z35 w1790912675
+R1
+R2
+!i122 118
+R3
+Z36 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/reloj12h.vhd
+Z37 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/reloj12h.vhd
+l0
+L23 1
+Vn[If`TzcLGdV<NjFYc<3F1
+!s100 ^cl7Y:>3FU0@77ZW97?lI3
+R6
+32
+R16
+!i10b 1
+Z38 !s108 1792191169.000000
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/reloj12h.vhd|
+Z40 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/reloj12h.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z41 DEx4 work 8 reloj12h 0 22 n[If`TzcLGdV<NjFYc<3F1
+!i122 118
+l60
+L46 198
+VR@PYAPeL@AkEPYee3h8;o2
+!s100 m1V446:3;mCjk=j374BXm3
+R6
+32
+R16
+!i10b 1
+R38
+R39
+R40
+!i113 1
+R11
+R12
+Esync_counter
+Z42 w1792191116
+Z43 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 122
+R3
+R4
+R5
+l0
+L5 1
+V1eMI;jY?;O^i9bNK2m<4;1
+!s100 B[4Bfj9;`l`Y]8[JDz=mc0
+R6
+32
+Z44 !s110 1792191170
+!i10b 1
+R25
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R43
+R1
+R2
+DEx4 work 12 sync_counter 0 22 1eMI;jY?;O^i9bNK2m<4;1
+!i122 122
+l13
+L11 17
+VNXnA6G4Ba[^KAnK5lPM8l3
+!s100 d^I5EDIbUgAJh_HS297oD3
+R6
+32
+R44
+!i10b 1
+R25
+R9
+R10
+!i113 1
+R11
+R12
+Esync_counter_tb
+Z45 w1792191121
+R43
+R1
+R2
+!i122 121
+R3
+Z46 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_Test.vhd
+Z47 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_Test.vhd
+l0
+L5 1
+VAS_];NIe^eJd3YD:e:ih=3
+!s100 [SZPCQ6N5^8HiFG0Q`6mk0
+R6
+32
+R44
+!i10b 1
+R25
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_Test.vhd|
+Z49 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_Test.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R43
+R1
+R2
+DEx4 work 15 sync_counter_tb 0 22 AS_];NIe^eJd3YD:e:ih=3
+!i122 121
+l25
+Z50 L8 60
+V6>RT^WPRY7BXDQGB0a43m3
+!s100 J:Nnn<1>@d00<C@0VMKMa1
+R6
+32
+R44
+!i10b 1
+R25
+R48
+R49
+!i113 1
+R11
+R12
+Etb_and_gate
+Z51 w1790981937
+R1
+R2
+!i122 52
+R3
+R46
+R47
+l0
+L5 1
+VOSI72nTa@f`l7E40RTgEL0
+!s100 k9]58bSFfb[m`dZWB>_`Z0
+R6
+32
+Z52 !s110 1790981941
+!i10b 1
+Z53 !s108 1790981941.000000
+R48
+R49
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 11 tb_and_gate 0 22 OSI72nTa@f`l7E40RTgEL0
+!i122 52
+l25
+R50
+VDKHI]3[XDg6zBk91hiX3`1
+!s100 Xf5;cMajddMIZ]V5<2G;@1
+R6
+32
+R52
+!i10b 1
+R53
+R48
+R49
+!i113 1
+R11
+R12
+Etb_compuertas
+Z54 w1790980475
+R1
+R2
+!i122 119
+R3
+Z55 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_compuertas.vhd
+Z56 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_compuertas.vhd
+l0
+L5 1
+VPLPkfl=:f1TNzVZ8?K]Nk1
+!s100 ;3M0Pf@66Ol0jVFI]AYTh2
+R6
+32
+R16
+!i10b 1
+R38
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_compuertas.vhd|
+Z58 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_compuertas.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R20
+R1
+R2
+DEx4 work 13 tb_compuertas 0 22 PLPkfl=:f1TNzVZ8?K]Nk1
+!i122 119
+l11
+L8 44
+VC0^XN7jVzTLAP<3D;R^IA3
+!s100 EFTXLIekW^oRTcQKE?1jf2
+R6
+32
+R16
+!i10b 1
+R38
+R57
+R58
+!i113 1
+R11
+R12
+Etb_detector_110
+R21
+R1
+R2
+!i122 123
+R3
+R22
+R23
+l0
+L32 1
+VabODlI<`;d]T;NIkhdm0T3
+!s100 7:Qj0h7]GnWnQbUB:OVgQ0
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R11
+R12
+Asim
+R28
+R1
+R2
+Z59 DEx4 work 15 tb_detector_110 0 22 abODlI<`;d]T;NIkhdm0T3
+!i122 123
+l41
+Z60 L36 35
+Z61 VijZAY0^b0jLRoS0o`nlng3
+Z62 !s100 _PN5PW<6gU@d^Rc[KS_j=2
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 15 tb_detector_110 0 22 XT6KSJW1zU0D@J?>9X8jV0
+!i122 115
+l83
+L62 58
+Vo>WNC29Cc1RX>k6m0hLj53
+!s100 @bRX]F3@ZFbCfdGnkL@FH0
+R6
+32
+Z63 !s110 1791919897
+!i10b 1
+Z64 !s108 1791919897.000000
+R9
+R10
+!i113 1
+R11
+R12
+R5
+w1791585457
+R4
+Etb_mux2
+Z65 w1790980571
+R1
+R2
+!i122 8
+R3
+R46
+R47
+l0
+L4 1
+VW>:a:m`NkEn]SP16a2Q?L3
+!s100 EN@:NL5mkO4dFlZZH`=dX3
+R6
+32
+Z66 !s110 1790980576
+!i10b 1
+Z67 !s108 1790980576.000000
+R48
+R49
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 7 tb_mux2 0 22 W>:a:m`NkEn]SP16a2Q?L3
+!i122 8
+l24
+Z68 L8 59
+VEdYaZ`O=?gfgI46oB9WQ21
+!s100 f=56@Il_1ZnkAmX=^D4Uo2
+R6
+32
+R66
+!i10b 1
+R67
+R48
+R49
+!i113 1
+R11
+R12
+Etb_reloj12h
+Z69 w1790912676
+R1
+R2
+!i122 120
+R3
+Z70 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_reloj12h.vhd
+Z71 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_reloj12h.vhd
+l0
+L7 1
+VG:ALi7cjMlz<096njY_Nb3
+!s100 Q6iBXPU3_@]m8bG_h<J=K0
+R6
+32
+R44
+!i10b 1
+R38
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_reloj12h.vhd|
+Z73 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/tb_reloj12h.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R41
+R1
+R2
+DEx4 work 11 tb_reloj12h 0 22 G:ALi7cjMlz<096njY_Nb3
+!i122 120
+l22
+L10 121
+VGigSX`]P8k_jS0ZPBkOhi1
+!s100 f]>@@ZdJZGlJjh0;_<aSA1
+R6
+32
+R44
+!i10b 1
+R38
+R72
+R73
+!i113 1
+R11
+R12
+Etb_test
+Z74 w1790982412
+R1
+R2
+!i122 76
+R3
+R46
+R47
+l0
+L5 1
+Vn0R0>TFG3[F9Ko]5Szc<b1
+!s100 TjoJUPQ>ZjoSlX=WlamLH3
+R6
+32
+R7
+!i10b 1
+R8
+R48
+R49
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 7 tb_test 0 22 n0R0>TFG3[F9Ko]5Szc<b1
+!i122 76
+l24
+R68
+VaTHdAi61o:oN:D>^_AclX3
+!s100 V3@E9>SD2O^QC6@lYKE[43
+R6
+32
+R7
+!i10b 1
+R8
+R48
+R49
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 7 tb_test 0 22 ]5FB`<2]TC;MKG]^`oV4=0
+!i122 46
+l24
+R68
+VCVF2zf:SklLeCO;7_Bi:E2
+!s100 K@O02kK<36_4Ke[1QCD=<0
+R6
+32
+!s110 1790981889
+!i10b 1
+!s108 1790981889.000000
+R48
+R49
+!i113 1
+R11
+R12
+w1790980841

@@ -5,10 +5,10 @@ entity compuertas is
     Port (
         A     : in  STD_LOGIC;
         B     : in  STD_LOGIC;
-        Y_AND : out STD_LOGIC;
-        Y_OR  : out STD_LOGIC;
-        Y_XOR : out STD_LOGIC;
-        Y_NOT : out STD_LOGIC
+        Y_AND : buffer STD_LOGIC;
+        Y_OR  : buffer STD_LOGIC;
+        Y_XOR : buffer STD_LOGIC;
+        Y_NOT : buffer STD_LOGIC
     );
 end compuertas;
 

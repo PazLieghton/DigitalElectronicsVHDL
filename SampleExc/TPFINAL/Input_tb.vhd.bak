@@ -1,0 +1,38 @@
+-- Testbench de Input
+--BEGIN TESTBENCH CLOCK / Corrobore que funciona :D--
+
+entity mainsig_tb is
+end mainsig_tb;
+
+architecture mainsig_tb_arq of mainsig_tb is
+    -- Declare the component to test
+    component mainsig is
+        port (
+            clk    : in bit;
+            rst    : in bit;
+            clk_25 : out bit
+        );
+    end component;
+
+    -- Testbench signals
+    signal clk_tb    : bit := '0';
+    signal rst_tb    : bit := '1';
+    signal clk_25_tb : bit; -- Fixed: This is a single bit, not a vector
+
+begin
+    -- 1. Generate the 50 MHz clock (Period = 20 ns)
+    -- Toggles every 10 ns
+    clk_tb <= not clk_tb after 10 ns;
+    
+    -- 2. Generate the reset signal
+    rst_tb <= '0' after 35 ns;
+
+    -- 3. Instantiate the Device Under Test (DUT)
+    DUT: mainsig
+        port map(
+            clk    => clk_tb,
+            rst    => rst_tb,
+            clk_25 => clk_25_tb
+        );
+        
+end mainsig_tb_arq;

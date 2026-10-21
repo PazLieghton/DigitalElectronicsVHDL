@@ -1,0 +1,119 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- ==========================================
+-- 1. DISEÑO DEL DETECTOR (Entidad principal)
+-- ==========================================
+entity detector_110 is
+    Port ( clk        : in  STD_LOGIC;
+           reset      : in  STD_LOGIC;
+           input_bit  : in  STD_LOGIC;
+           output_bit : out STD_LOGIC);
+end detector_110;
+
+architecture Behavioral of detector_110 is
+    type state_type is (S0, S1, S2, S3);
+    signal current_state, next_state : state_type;
+begin
+
+    -- Proceso secuencial (Flip-Flops D)
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            current_state <= S0;
+        elsif rising_edge(clk) then
+            current_state <= next_state;
+        end if;
+    end process;
+
+    -- Lógica de próximo estado
+    process(current_state, input_bit)
+    begin
+        case current_state is
+            when S0 =>
+                if input_bit = '1' then next_state <= S1; else next_state <= S0; end if;
+            when S1 =>
+                if input_bit = '1' then next_state <= S2; else next_state <= S0; end if;
+            when S2 =>
+                if input_bit = '1' then next_state <= S2; else next_state <= S3; end if;
+            when S3 =>
+                if input_bit = '1' then next_state <= S1; else next_state <= S0; end if;
+            when others =>
+                next_state <= S0;
+        end case;
+    end process;
+
+    -- Salida Moore
+    output_bit <= '1' when current_state = S3 else '0';
+
+end Behavioral;
+
+
+-- ==========================================
+-- 2. TESTBENCH (Todo en el mismo archivo)
+-- ==========================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_detector_110 is
+-- Un testbench no tiene puertos
+end tb_detector_110;
+
+architecture Behavioral of tb_detector_110 is
+    -- Declaración del componente
+    component detector_110
+        Port ( clk        : in  STD_LOGIC;
+               reset      : in  STD_LOGIC;
+               input_bit  : in  STD_LOGIC;
+               output_bit : out STD_LOGIC);
+    end component;
+
+    -- Señales
+    signal clk_tb    : STD_LOGIC := '0';
+    signal reset_tb  : STD_LOGIC := '1';
+    signal input_tb  : STD_LOGIC := '0';
+    signal output_tb : STD_LOGIC;
+
+    constant clk_period : time := 10 ns;
+
+    -- Secuencia de la Fig 2
+    type bit_array is array (natural range <>) of std_logic;
+    constant test_sequence : bit_array := ('0', '0', '1', '1', '0', '0', '0', '1', '1', '0', '1', '0');
+
+begin
+
+    -- Instanciación
+    uut: detector_110 port map (
+        clk        => clk_tb,
+        reset      => reset_tb,
+        input_bit  => input_tb,
+        output_bit => output_tb
+    );
+
+    -- Reloj
+    clk_process : process
+    begin
+        clk_tb <= '0';
+        wait for clk_period/2;
+        clk_tb <= '1';
+        wait for clk_period/2;
+    end process;
+
+    -- Estímulos
+    stim_proc: process
+    begin
+        reset_tb <= '1';
+        wait for clk_period * 2;
+        reset_tb <= '0';
+        wait for clk_period;
+
+        for i in test_sequence'range loop
+            input_tb <= test_sequence(i);
+            wait for clk_period;
+        end loop;
+
+        wait for clk_period * 2;
+        wait;
+    end process;
+
+end Behavioral;
