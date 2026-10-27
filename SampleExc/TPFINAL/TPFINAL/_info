@@ -10,32 +10,32 @@ z2
 cModel Technology
 dC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc
 Ebcd_counter
-Z0 w1792525940
-!i122 31
+Z0 w1793126784
+!i122 51
 Z1 dC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL
 Z2 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter.vhd
 Z3 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter.vhd
 l0
-L6 1
-Vo[;m<0NL5o?k?WJd9>TPO3
-!s100 8M<`2emi;X=VJ^8iGCc]`0
+L7 1
+VeYibCiGXK:b;eQ2<Uh40^2
+!s100 2?LN`n^lmIAcR<=Dgel?O2
 Z4 OV;C;2020.1;71
 32
-Z5 !s110 1792525990
+Z5 !s110 1793128297
 !i10b 1
-Z6 !s108 1792525990.000000
+Z6 !s108 1793128297.000000
 Z7 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter.vhd|
 Z8 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter.vhd|
 !i113 1
 Z9 o-work TPFINAL -2002 -explicit
 Z10 tExplicit 1 CvgOpt 0
 Astructural
-DEx4 work 11 bcd_counter 0 22 o[;m<0NL5o?k?WJd9>TPO3
-!i122 31
-l31
-L15 43
-VIj=JUVfn<_G>4eB`aj5173
-!s100 WcHTJO]:85:``V0NZFUDk2
+DEx4 work 11 bcd_counter 0 22 eYibCiGXK:b;eQ2<Uh40^2
+!i122 51
+l32
+L16 43
+VPWUHToh=J134<Lnm3VbkH1
+!s100 Qd]DGOJdaDPjF>V[Wz:][2
 R4
 32
 R5
@@ -47,8 +47,8 @@ R8
 R9
 R10
 Ebcd_counter_tb
-Z11 w1792525958
-!i122 32
+Z11 w1792526157
+!i122 52
 R1
 Z12 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd
 Z13 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd
@@ -62,13 +62,13 @@ R5
 !i10b 1
 R6
 Z14 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd|
-!s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd|
+Z15 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd|
 !i113 1
 R9
 R10
 Atb_arq
 DEx4 work 14 bcd_counter_tb 0 22 MDS^<US0AAoC`nF1Loi=V1
-!i122 32
+!i122 52
 l24
 L9 28
 VnB43L`aLdIle4oG9BP_OC0
@@ -79,33 +79,33 @@ R5
 !i10b 1
 R6
 R14
-Z15 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/bcd_counter_tb.vhd|
+R15
 !i113 1
 R9
 R10
 Effd
 Z16 w1792525303
-!i122 28
+!i122 48
 R1
-Z17 8C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\ffd.vhd
-Z18 FC:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\ffd.vhd
+Z17 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd
+Z18 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd
 l0
 L2 1
 VH:G089CEBjnP]bGYP9[6R1
 !s100 [UA2a=f195^EU1^olUbiC0
 R4
 32
-Z19 !s110 1792525989
+Z19 !s110 1793128296
 !i10b 1
-Z20 !s108 1792525988.000000
-Z21 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\ffd.vhd|
-Z22 !s107 C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\ffd.vhd|
+Z20 !s108 1793128295.000000
+Z21 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd|
+Z22 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/ffd.vhd|
 !i113 1
 R9
 R10
 Affd_arq
 DEx4 work 3 ffd 0 22 H:G089CEBjnP]bGYP9[6R1
-!i122 28
+!i122 48
 l12
 L11 13
 VC8B=ULl6zc?CJCDD<a]MW3
@@ -122,10 +122,10 @@ R9
 R10
 Emainsig
 Z23 w1792525057
-!i122 29
+!i122 49
 R1
-Z24 8C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\Input.vhd
-Z25 FC:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\Input.vhd
+Z24 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd
+Z25 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd
 l0
 L1 1
 VoK311T:l_=n7b6SNY;3GB3
@@ -134,15 +134,15 @@ R4
 32
 R19
 !i10b 1
-Z26 !s108 1792525989.000000
-Z27 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\Input.vhd|
-Z28 !s107 C:\Users\pazli\Documents\Github\VHDL\DigitalElectronicsVHDL\SampleExc\TPFINAL\Input.vhd|
+Z26 !s108 1793128296.000000
+Z27 !s90 -reportprogress|300|-work|TPFINAL|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd|
+Z28 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input.vhd|
 !i113 1
 R9
 R10
 Amainsig_arq
 DEx4 work 7 mainsig 0 22 oK311T:l_=n7b6SNY;3GB3
-!i122 29
+!i122 49
 l24
 L9 31
 VQVF?KJl3Eg_O20F[zCXe^2
@@ -159,7 +159,7 @@ R9
 R10
 Emainsig_tb
 Z29 w1792524548
-!i122 30
+!i122 50
 R1
 Z30 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input_tb.vhd
 Z31 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/Input_tb.vhd
@@ -179,7 +179,7 @@ R9
 R10
 Amainsig_tb_arq
 DEx4 work 10 mainsig_tb 0 22 OJ555L9Z[[JR>C0fbCm<J0
-!i122 30
+!i122 50
 l22
 L7 31
 VVQ7ZIA`3Z2Tz3g<j>RRRd0
@@ -193,4 +193,78 @@ R32
 R33
 !i113 1
 R9
+R10
+Esigma_delta
+Z34 w1793128291
+!i122 53
+R1
+Z35 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta.vhd
+Z36 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta.vhd
+l0
+L7 1
+VHz72RAf=598Z1ji=ITIX<2
+!s100 ]7W_22YO_G@;acD82AIOd0
+R4
+32
+R5
+!i10b 1
+R6
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta.vhd|
+Z38 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta.vhd|
+!i113 1
+Z39 o-work work -2002 -explicit
+R10
+Astructural
+DEx4 work 11 sigma_delta 0 22 Hz72RAf=598Z1ji=ITIX<2
+!i122 53
+l26
+L16 20
+VSV1X1UFJUc>1lfeV9Z9C:0
+!s100 9o9Yo75ZT1O5@UJ>KXMS@0
+R4
+32
+R5
+!i10b 1
+R6
+R37
+R38
+!i113 1
+R39
+R10
+Esigma_delta_tb
+Z40 w1793128249
+!i122 54
+R1
+Z41 8C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta_tb.vhd
+Z42 FC:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta_tb.vhd
+l0
+L1 1
+VF8BR@;KQB25YOMJ]B`<lc3
+!s100 S[Y1LYGAeWKPNgNgfc7TZ3
+R4
+32
+Z43 !s110 1793128298
+!i10b 1
+R6
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta_tb.vhd|
+!s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta_tb.vhd|
+!i113 1
+R39
+R10
+Atb_arq
+DEx4 work 14 sigma_delta_tb 0 22 F8BR@;KQB25YOMJ]B`<lc3
+!i122 54
+l19
+L4 32
+Vh82LbJa]U]`_=m?G1kBmM1
+!s100 iZ?chW<?S`LnO?F]56imG1
+R4
+32
+R43
+!i10b 1
+R6
+R44
+Z45 !s107 C:/Users/pazli/Documents/Github/VHDL/DigitalElectronicsVHDL/SampleExc/TPFINAL/sigma_delta_tb.vhd|
+!i113 1
+R39
 R10

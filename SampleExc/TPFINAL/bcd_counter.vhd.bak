@@ -3,6 +3,7 @@
 --add wave *
 --run 1us
 --wave zoom ful ACORDATE PARA SIMULAR
+
 entity bcd_counter is
     port (
         clk    : in bit;
