@@ -11,7 +11,7 @@ entity bcd_counter is
         ena    : in bit;
         q_out  : out bit_vector(3 downto 0)
     );
-end bcd_counter;
+end bcd_counter;d
 
 architecture structural of bcd_counter is
     --FFD Declarado de profesor

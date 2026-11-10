@@ -20,7 +20,8 @@ architecture mainsig_tb_arq of mainsig_tb is
     signal clk_25_tb : bit; -- Fixed: Este es fijo
 
 begin
-	--Genero una senial de 50 MHz y tiene un retardo de 10ns
+	--Genero 
+ senial de 50 MHz y tiene un retardo de 10ns
     clk_tb <= not clk_tb after 10 ns;
     
     -- Genero la senial reset

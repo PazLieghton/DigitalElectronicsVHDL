@@ -1,0 +1,2904 @@
+|acyiib
+osc_50mhz => voltimetro_toplevel:nucleo.clk_i
+p1[24] <> p1[24]
+p1[23] <> p1[23]
+p1[22] <> p1[22]
+p1[21] <> p1[21]
+p1[20] <> p1[20]
+p1[19] <> p1[19]
+p1[18] <> p1[18]
+p1[17] <> p1[17]
+p1[16] <> p1[16]
+p1[15] <> p1[15]
+p1[14] <> p1[14]
+p1[13] <> p1[13]
+p1[12] <> p1[12]
+p1[11] <> p1[11]
+p1[10] <> p1[10]
+p1[9] <> p1[9]
+p1[8] <> p1[8]
+p1[7] <> p1[7]
+p1[6] <> p1[6]
+p1[5] <> p1[5]
+p1[4] <> p1[4]
+p1[3] <> p1[3]
+p1[2] <> p1[2]
+p1[1] <> p1[1]
+p2_io1[11] <> p2_io1[11]
+p2_io1[10] <> p2_io1[10]
+p2_io1[9] <> p2_io1[9]
+p2_io1[8] <> p2_io1[8]
+p2_io1[7] <> p2_io1[7]
+p2_io1[6] <> p2_io1[6]
+p2_io1[5] <> p2_io1[5]
+p2_io1[4] <> p2_io1[4]
+p2_io1[3] <> p2_io1[3]
+p2_in[15] => ~NO_FANOUT~
+p2_in[14] => voltimetro_toplevel:nucleo.data_volt_in_i[2]
+p2_in[13] => voltimetro_toplevel:nucleo.data_volt_in_i[0]
+p2_in[12] => voltimetro_toplevel:nucleo.data_volt_in_i[1]
+p2_io2[25] <> p2_io2[25]
+p2_io2[24] <> p2_io2[24]
+p2_io2[23] <> p2_io2[23]
+p2_io2[22] <> p2_io2[22]
+p2_io2[21] <> p2_io2[21]
+p2_io2[20] <> p2_io2[20]
+p2_io2[19] <> p2_io2[19]
+p2_io2[18] <> p2_io2[18]
+p2_io2[17] <> p2_io2[17]
+p2_io2[16] <> p2_io2[16]
+
+
+|acyiib|Voltimetro_toplevel:nucleo
+clk_i => ffd_en:ffd_i.clk_i
+rst_i => Voltimetro:voltimetro_i.rst_i
+data_volt_in_i[0] => Voltimetro:voltimetro_i.data_volt_in_i[0]
+data_volt_in_i[1] => Voltimetro:voltimetro_i.data_volt_in_i[1]
+data_volt_in_i[2] => Voltimetro:voltimetro_i.data_volt_in_i[2]
+data_volt_out_o[0] <= Voltimetro:voltimetro_i.data_volt_out_o[0]
+data_volt_out_o[1] <= Voltimetro:voltimetro_i.data_volt_out_o[1]
+data_volt_out_o[2] <= Voltimetro:voltimetro_i.data_volt_out_o[2]
+hs_o <= Voltimetro:voltimetro_i.hs_o
+vs_o <= Voltimetro:voltimetro_i.vs_o
+red_o <= Voltimetro:voltimetro_i.red_o
+grn_o <= Voltimetro:voltimetro_i.grn_o
+blu_o <= Voltimetro:voltimetro_i.blu_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|ffd_en:ffd_i
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|ffd_en:ffd_i|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i
+clk_i => bin_counter:ventana.clk
+clk_i => canal_medicion:canal1.clk_i
+clk_i => canal_medicion:canal2.clk_i
+clk_i => canal_medicion:canal3.clk_i
+clk_i => vga_lab:pantalla.clk_i
+rst_i => bin_counter:ventana.rst
+rst_i => canal_medicion:canal1.rst_i
+rst_i => canal_medicion:canal2.rst_i
+rst_i => canal_medicion:canal3.rst_i
+data_volt_in_i[0] => canal_medicion:canal1.entrada_i
+data_volt_in_i[1] => canal_medicion:canal2.entrada_i
+data_volt_in_i[2] => canal_medicion:canal3.entrada_i
+data_volt_out_o[0] <= canal_medicion:canal1.feedback_o
+data_volt_out_o[1] <= canal_medicion:canal2.feedback_o
+data_volt_out_o[2] <= canal_medicion:canal3.feedback_o
+hs_o <= vga_lab:pantalla.hs_o
+vs_o <= vga_lab:pantalla.vs_o
+red_o <= vga_lab:pantalla.red_o
+grn_o <= vga_lab:pantalla.grn_o
+blu_o <= vga_lab:pantalla.blu_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+rst => rst_int.IN1
+tc <= tc_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1
+clk_i => sigma_delta:entrada.clk
+clk_i => bcd_counter_3d:contador.clk
+clk_i => reg_12bit:resultado.clk
+rst_i => cuenta_rst.IN0
+rst_i => sigma_delta:entrada.rst
+rst_i => reg_12bit:resultado.rst
+entrada_i => sigma_delta:entrada.data_volt_in
+fin_ventana_i => cuenta_rst.IN1
+fin_ventana_i => reg_12bit:resultado.ena
+fin_ventana_i => cuenta_ena.IN1
+feedback_o <= sigma_delta:entrada.data_volt_out
+lectura_o[0] <= reg_12bit:resultado.q_out[0]
+lectura_o[1] <= reg_12bit:resultado.q_out[1]
+lectura_o[2] <= reg_12bit:resultado.q_out[2]
+lectura_o[3] <= reg_12bit:resultado.q_out[3]
+lectura_o[4] <= reg_12bit:resultado.q_out[4]
+lectura_o[5] <= reg_12bit:resultado.q_out[5]
+lectura_o[6] <= reg_12bit:resultado.q_out[6]
+lectura_o[7] <= reg_12bit:resultado.q_out[7]
+lectura_o[8] <= reg_12bit:resultado.q_out[8]
+lectura_o[9] <= reg_12bit:resultado.q_out[9]
+lectura_o[10] <= reg_12bit:resultado.q_out[10]
+lectura_o[11] <= reg_12bit:resultado.q_out[11]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada
+clk => ffd:ffd_inst.clk
+rst => ffd:ffd_inst.rst
+data_volt_in => ffd:ffd_inst.d
+data_volt_out <= ffd:ffd_inst.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada|ffd:ffd_inst
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador
+clk => bcd_counter:U1.clk
+clk => bcd_counter:T1.clk
+clk => bcd_counter:H1.clk
+rst => bcd_counter:U1.rst
+rst => bcd_counter:T1.rst
+rst => bcd_counter:H1.rst
+ena => bcd_counter:U1.ena
+q_out[0] <= bcd_counter:U1.q_out[0]
+q_out[1] <= bcd_counter:U1.q_out[1]
+q_out[2] <= bcd_counter:U1.q_out[2]
+q_out[3] <= bcd_counter:U1.q_out[3]
+q_out[4] <= bcd_counter:T1.q_out[0]
+q_out[5] <= bcd_counter:T1.q_out[1]
+q_out[6] <= bcd_counter:T1.q_out[2]
+q_out[7] <= bcd_counter:T1.q_out[3]
+q_out[8] <= bcd_counter:H1.q_out[0]
+q_out[9] <= bcd_counter:H1.q_out[1]
+q_out[10] <= bcd_counter:H1.q_out[2]
+q_out[11] <= bcd_counter:H1.q_out[3]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2
+clk_i => sigma_delta:entrada.clk
+clk_i => bcd_counter_3d:contador.clk
+clk_i => reg_12bit:resultado.clk
+rst_i => cuenta_rst.IN0
+rst_i => sigma_delta:entrada.rst
+rst_i => reg_12bit:resultado.rst
+entrada_i => sigma_delta:entrada.data_volt_in
+fin_ventana_i => cuenta_rst.IN1
+fin_ventana_i => reg_12bit:resultado.ena
+fin_ventana_i => cuenta_ena.IN1
+feedback_o <= sigma_delta:entrada.data_volt_out
+lectura_o[0] <= reg_12bit:resultado.q_out[0]
+lectura_o[1] <= reg_12bit:resultado.q_out[1]
+lectura_o[2] <= reg_12bit:resultado.q_out[2]
+lectura_o[3] <= reg_12bit:resultado.q_out[3]
+lectura_o[4] <= reg_12bit:resultado.q_out[4]
+lectura_o[5] <= reg_12bit:resultado.q_out[5]
+lectura_o[6] <= reg_12bit:resultado.q_out[6]
+lectura_o[7] <= reg_12bit:resultado.q_out[7]
+lectura_o[8] <= reg_12bit:resultado.q_out[8]
+lectura_o[9] <= reg_12bit:resultado.q_out[9]
+lectura_o[10] <= reg_12bit:resultado.q_out[10]
+lectura_o[11] <= reg_12bit:resultado.q_out[11]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|sigma_delta:entrada
+clk => ffd:ffd_inst.clk
+rst => ffd:ffd_inst.rst
+data_volt_in => ffd:ffd_inst.d
+data_volt_out <= ffd:ffd_inst.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|sigma_delta:entrada|ffd:ffd_inst
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador
+clk => bcd_counter:U1.clk
+clk => bcd_counter:T1.clk
+clk => bcd_counter:H1.clk
+rst => bcd_counter:U1.rst
+rst => bcd_counter:T1.rst
+rst => bcd_counter:H1.rst
+ena => bcd_counter:U1.ena
+q_out[0] <= bcd_counter:U1.q_out[0]
+q_out[1] <= bcd_counter:U1.q_out[1]
+q_out[2] <= bcd_counter:U1.q_out[2]
+q_out[3] <= bcd_counter:U1.q_out[3]
+q_out[4] <= bcd_counter:T1.q_out[0]
+q_out[5] <= bcd_counter:T1.q_out[1]
+q_out[6] <= bcd_counter:T1.q_out[2]
+q_out[7] <= bcd_counter:T1.q_out[3]
+q_out[8] <= bcd_counter:H1.q_out[0]
+q_out[9] <= bcd_counter:H1.q_out[1]
+q_out[10] <= bcd_counter:H1.q_out[2]
+q_out[11] <= bcd_counter:H1.q_out[3]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3
+clk_i => sigma_delta:entrada.clk
+clk_i => bcd_counter_3d:contador.clk
+clk_i => reg_12bit:resultado.clk
+rst_i => cuenta_rst.IN0
+rst_i => sigma_delta:entrada.rst
+rst_i => reg_12bit:resultado.rst
+entrada_i => sigma_delta:entrada.data_volt_in
+fin_ventana_i => cuenta_rst.IN1
+fin_ventana_i => reg_12bit:resultado.ena
+fin_ventana_i => cuenta_ena.IN1
+feedback_o <= sigma_delta:entrada.data_volt_out
+lectura_o[0] <= reg_12bit:resultado.q_out[0]
+lectura_o[1] <= reg_12bit:resultado.q_out[1]
+lectura_o[2] <= reg_12bit:resultado.q_out[2]
+lectura_o[3] <= reg_12bit:resultado.q_out[3]
+lectura_o[4] <= reg_12bit:resultado.q_out[4]
+lectura_o[5] <= reg_12bit:resultado.q_out[5]
+lectura_o[6] <= reg_12bit:resultado.q_out[6]
+lectura_o[7] <= reg_12bit:resultado.q_out[7]
+lectura_o[8] <= reg_12bit:resultado.q_out[8]
+lectura_o[9] <= reg_12bit:resultado.q_out[9]
+lectura_o[10] <= reg_12bit:resultado.q_out[10]
+lectura_o[11] <= reg_12bit:resultado.q_out[11]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|sigma_delta:entrada
+clk => ffd:ffd_inst.clk
+rst => ffd:ffd_inst.rst
+data_volt_in => ffd:ffd_inst.d
+data_volt_out <= ffd:ffd_inst.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|sigma_delta:entrada|ffd:ffd_inst
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador
+clk => bcd_counter:U1.clk
+clk => bcd_counter:T1.clk
+clk => bcd_counter:H1.clk
+rst => bcd_counter:U1.rst
+rst => bcd_counter:T1.rst
+rst => bcd_counter:H1.rst
+ena => bcd_counter:U1.ena
+q_out[0] <= bcd_counter:U1.q_out[0]
+q_out[1] <= bcd_counter:U1.q_out[1]
+q_out[2] <= bcd_counter:U1.q_out[2]
+q_out[3] <= bcd_counter:U1.q_out[3]
+q_out[4] <= bcd_counter:T1.q_out[0]
+q_out[5] <= bcd_counter:T1.q_out[1]
+q_out[6] <= bcd_counter:T1.q_out[2]
+q_out[7] <= bcd_counter:T1.q_out[3]
+q_out[8] <= bcd_counter:H1.q_out[0]
+q_out[9] <= bcd_counter:H1.q_out[1]
+q_out[10] <= bcd_counter:H1.q_out[2]
+q_out[11] <= bcd_counter:H1.q_out[3]
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1
+clk => ffd:ffd0.clk
+clk => ffd:ffd1.clk
+clk => ffd:ffd2.clk
+clk => ffd:ffd3.clk
+rst => rst_int.IN1
+ena => rst_int.IN1
+ena => co.IN1
+ena => t_int[1].IN1
+ena => t_int[2].IN1
+ena => t_int[3].IN1
+ena => d_int[0].IN1
+q_out[0] <= ffd:ffd0.q
+q_out[1] <= ffd:ffd1.q
+q_out[2] <= ffd:ffd2.q
+q_out[3] <= ffd:ffd3.q
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla
+clk_i => contador_binario10:horizontal.clk_i
+clk_i => contador_binario10:vertical.clk_i
+clk_i => reg_12bit:frame1.clk
+clk_i => reg_12bit:frame2.clk
+clk_i => reg_12bit:frame3.clk
+clk_i => rom:fuente.clk
+clk_i => ffd_en:ret_hs.clk_i
+clk_i => ffd_en:ret_vs.clk_i
+clk_i => ffd_en:ret_texto.clk_i
+clk_i => ffd_en:ret_rgb:0:ff.clk_i
+clk_i => ffd_en:ret_rgb:1:ff.clk_i
+clk_i => ffd_en:ret_rgb:2:ff.clk_i
+reg1_i[0] => reg_12bit:frame1.d_in[0]
+reg1_i[1] => reg_12bit:frame1.d_in[1]
+reg1_i[2] => reg_12bit:frame1.d_in[2]
+reg1_i[3] => reg_12bit:frame1.d_in[3]
+reg1_i[4] => reg_12bit:frame1.d_in[4]
+reg1_i[5] => reg_12bit:frame1.d_in[5]
+reg1_i[6] => reg_12bit:frame1.d_in[6]
+reg1_i[7] => reg_12bit:frame1.d_in[7]
+reg1_i[8] => reg_12bit:frame1.d_in[8]
+reg1_i[9] => reg_12bit:frame1.d_in[9]
+reg1_i[10] => reg_12bit:frame1.d_in[10]
+reg1_i[11] => reg_12bit:frame1.d_in[11]
+reg2_i[0] => reg_12bit:frame2.d_in[0]
+reg2_i[1] => reg_12bit:frame2.d_in[1]
+reg2_i[2] => reg_12bit:frame2.d_in[2]
+reg2_i[3] => reg_12bit:frame2.d_in[3]
+reg2_i[4] => reg_12bit:frame2.d_in[4]
+reg2_i[5] => reg_12bit:frame2.d_in[5]
+reg2_i[6] => reg_12bit:frame2.d_in[6]
+reg2_i[7] => reg_12bit:frame2.d_in[7]
+reg2_i[8] => reg_12bit:frame2.d_in[8]
+reg2_i[9] => reg_12bit:frame2.d_in[9]
+reg2_i[10] => reg_12bit:frame2.d_in[10]
+reg2_i[11] => reg_12bit:frame2.d_in[11]
+reg3_i[0] => reg_12bit:frame3.d_in[0]
+reg3_i[1] => reg_12bit:frame3.d_in[1]
+reg3_i[2] => reg_12bit:frame3.d_in[2]
+reg3_i[3] => reg_12bit:frame3.d_in[3]
+reg3_i[4] => reg_12bit:frame3.d_in[4]
+reg3_i[5] => reg_12bit:frame3.d_in[5]
+reg3_i[6] => reg_12bit:frame3.d_in[6]
+reg3_i[7] => reg_12bit:frame3.d_in[7]
+reg3_i[8] => reg_12bit:frame3.d_in[8]
+reg3_i[9] => reg_12bit:frame3.d_in[9]
+reg3_i[10] => reg_12bit:frame3.d_in[10]
+reg3_i[11] => reg_12bit:frame3.d_in[11]
+hs_o <= ffd_en:ret_hs.q_o
+vs_o <= ffd_en:ret_vs.q_o
+red_o <= red_o.DB_MAX_OUTPUT_PORT_TYPE
+grn_o <= grn_o.DB_MAX_OUTPUT_PORT_TYPE
+blu_o <= blu_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal
+clk_i => ffd:bits_ff:0:ff.clk
+clk_i => ffd:bits_ff:1:ff.clk
+clk_i => ffd:bits_ff:2:ff.clk
+clk_i => ffd:bits_ff:3:ff.clk
+clk_i => ffd:bits_ff:4:ff.clk
+clk_i => ffd:bits_ff:5:ff.clk
+clk_i => ffd:bits_ff:6:ff.clk
+clk_i => ffd:bits_ff:7:ff.clk
+clk_i => ffd:bits_ff:8:ff.clk
+clk_i => ffd:bits_ff:9:ff.clk
+rst_i => reset_ff.IN1
+ena_i => t[1].IN1
+ena_i => d[0].IN1
+ena_i => reset_ff.IN1
+q_o[0] <= ffd:bits_ff:0:ff.q
+q_o[1] <= ffd:bits_ff:1:ff.q
+q_o[2] <= ffd:bits_ff:2:ff.q
+q_o[3] <= ffd:bits_ff:3:ff.q
+q_o[4] <= ffd:bits_ff:4:ff.q
+q_o[5] <= ffd:bits_ff:5:ff.q
+q_o[6] <= ffd:bits_ff:6:ff.q
+q_o[7] <= ffd:bits_ff:7:ff.q
+q_o[8] <= ffd:bits_ff:8:ff.q
+q_o[9] <= ffd:bits_ff:9:ff.q
+ultimo_o <= ultimo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:0:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:1:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:2:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:3:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:4:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:5:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:6:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:7:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:8:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:9:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical
+clk_i => ffd:bits_ff:0:ff.clk
+clk_i => ffd:bits_ff:1:ff.clk
+clk_i => ffd:bits_ff:2:ff.clk
+clk_i => ffd:bits_ff:3:ff.clk
+clk_i => ffd:bits_ff:4:ff.clk
+clk_i => ffd:bits_ff:5:ff.clk
+clk_i => ffd:bits_ff:6:ff.clk
+clk_i => ffd:bits_ff:7:ff.clk
+clk_i => ffd:bits_ff:8:ff.clk
+clk_i => ffd:bits_ff:9:ff.clk
+rst_i => reset_ff.IN1
+ena_i => t[1].IN1
+ena_i => d[0].IN1
+ena_i => reset_ff.IN1
+q_o[0] <= ffd:bits_ff:0:ff.q
+q_o[1] <= ffd:bits_ff:1:ff.q
+q_o[2] <= ffd:bits_ff:2:ff.q
+q_o[3] <= ffd:bits_ff:3:ff.q
+q_o[4] <= ffd:bits_ff:4:ff.q
+q_o[5] <= ffd:bits_ff:5:ff.q
+q_o[6] <= ffd:bits_ff:6:ff.q
+q_o[7] <= ffd:bits_ff:7:ff.q
+q_o[8] <= ffd:bits_ff:8:ff.q
+q_o[9] <= ffd:bits_ff:9:ff.q
+ultimo_o <= ultimo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:0:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:1:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:2:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:3:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:4:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:5:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:6:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:7:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:8:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:9:ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3
+clk => ffd_en:ff_gen:0:f.clk_i
+clk => ffd_en:ff_gen:1:f.clk_i
+clk => ffd_en:ff_gen:2:f.clk_i
+clk => ffd_en:ff_gen:3:f.clk_i
+clk => ffd_en:ff_gen:4:f.clk_i
+clk => ffd_en:ff_gen:5:f.clk_i
+clk => ffd_en:ff_gen:6:f.clk_i
+clk => ffd_en:ff_gen:7:f.clk_i
+clk => ffd_en:ff_gen:8:f.clk_i
+clk => ffd_en:ff_gen:9:f.clk_i
+clk => ffd_en:ff_gen:10:f.clk_i
+clk => ffd_en:ff_gen:11:f.clk_i
+rst => ffd_en:ff_gen:0:f.rst_i
+rst => ffd_en:ff_gen:1:f.rst_i
+rst => ffd_en:ff_gen:2:f.rst_i
+rst => ffd_en:ff_gen:3:f.rst_i
+rst => ffd_en:ff_gen:4:f.rst_i
+rst => ffd_en:ff_gen:5:f.rst_i
+rst => ffd_en:ff_gen:6:f.rst_i
+rst => ffd_en:ff_gen:7:f.rst_i
+rst => ffd_en:ff_gen:8:f.rst_i
+rst => ffd_en:ff_gen:9:f.rst_i
+rst => ffd_en:ff_gen:10:f.rst_i
+rst => ffd_en:ff_gen:11:f.rst_i
+ena => ffd_en:ff_gen:0:f.ena_i
+ena => ffd_en:ff_gen:1:f.ena_i
+ena => ffd_en:ff_gen:2:f.ena_i
+ena => ffd_en:ff_gen:3:f.ena_i
+ena => ffd_en:ff_gen:4:f.ena_i
+ena => ffd_en:ff_gen:5:f.ena_i
+ena => ffd_en:ff_gen:6:f.ena_i
+ena => ffd_en:ff_gen:7:f.ena_i
+ena => ffd_en:ff_gen:8:f.ena_i
+ena => ffd_en:ff_gen:9:f.ena_i
+ena => ffd_en:ff_gen:10:f.ena_i
+ena => ffd_en:ff_gen:11:f.ena_i
+d_in[0] => ffd_en:ff_gen:0:f.d_i
+d_in[1] => ffd_en:ff_gen:1:f.d_i
+d_in[2] => ffd_en:ff_gen:2:f.d_i
+d_in[3] => ffd_en:ff_gen:3:f.d_i
+d_in[4] => ffd_en:ff_gen:4:f.d_i
+d_in[5] => ffd_en:ff_gen:5:f.d_i
+d_in[6] => ffd_en:ff_gen:6:f.d_i
+d_in[7] => ffd_en:ff_gen:7:f.d_i
+d_in[8] => ffd_en:ff_gen:8:f.d_i
+d_in[9] => ffd_en:ff_gen:9:f.d_i
+d_in[10] => ffd_en:ff_gen:10:f.d_i
+d_in[11] => ffd_en:ff_gen:11:f.d_i
+q_out[0] <= ffd_en:ff_gen:0:f.q_o
+q_out[1] <= ffd_en:ff_gen:1:f.q_o
+q_out[2] <= ffd_en:ff_gen:2:f.q_o
+q_out[3] <= ffd_en:ff_gen:3:f.q_o
+q_out[4] <= ffd_en:ff_gen:4:f.q_o
+q_out[5] <= ffd_en:ff_gen:5:f.q_o
+q_out[6] <= ffd_en:ff_gen:6:f.q_o
+q_out[7] <= ffd_en:ff_gen:7:f.q_o
+q_out[8] <= ffd_en:ff_gen:8:f.q_o
+q_out[9] <= ffd_en:ff_gen:9:f.q_o
+q_out[10] <= ffd_en:ff_gen:10:f.q_o
+q_out[11] <= ffd_en:ff_gen:11:f.q_o
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:0:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:0:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:1:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:1:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:2:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:2:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:3:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:3:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:4:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:4:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:5:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:5:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:6:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:6:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:7:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:7:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:8:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:8:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:9:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:9:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:10:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:10:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:11:f
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:11:f|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|mux_logic:texto
+pixel_x[0] => ~NO_FANOUT~
+pixel_x[1] => ~NO_FANOUT~
+pixel_x[2] => font_col[0].DATAIN
+pixel_x[3] => font_col[1].DATAIN
+pixel_x[4] => font_col[2].DATAIN
+pixel_x[5] => col9.IN1
+pixel_x[5] => col11.IN1
+pixel_x[5] => col13.IN1
+pixel_x[5] => col6.IN1
+pixel_x[5] => col8.IN1
+pixel_x[5] => col10.IN1
+pixel_x[6] => col6.IN1
+pixel_x[6] => col10.IN1
+pixel_x[6] => col8.IN1
+pixel_x[6] => col13.IN1
+pixel_x[7] => col6.IN1
+pixel_x[7] => col13.IN1
+pixel_x[7] => col8.IN1
+pixel_x[8] => col8.IN0
+pixel_x[8] => col6.IN0
+pixel_x[9] => col6.IN1
+pixel_x[9] => col8.IN1
+pixel_y[0] => ~NO_FANOUT~
+pixel_y[1] => ~NO_FANOUT~
+pixel_y[2] => font_row[0].DATAIN
+pixel_y[3] => font_row[1].DATAIN
+pixel_y[4] => font_row[2].DATAIN
+pixel_y[5] => r2v[0].IN1
+pixel_y[5] => r1v[0].IN1
+pixel_y[5] => r3v[0].IN1
+pixel_y[6] => row2.IN1
+pixel_y[6] => row3.IN1
+pixel_y[6] => row1.IN1
+pixel_y[7] => row1.IN1
+pixel_y[7] => row3.IN1
+pixel_y[8] => row3.IN0
+pixel_y[8] => row1.IN0
+pixel_y[9] => row1.IN1
+pixel_y[9] => row3.IN1
+reg1[0] => dig_c.IN1
+reg1[1] => dig_c.IN1
+reg1[2] => dig_c.IN1
+reg1[3] => dig_c.IN1
+reg1[4] => dig_d.IN1
+reg1[5] => dig_d.IN1
+reg1[6] => dig_d.IN1
+reg1[7] => dig_d.IN1
+reg1[8] => dig_v.IN1
+reg1[9] => dig_v.IN1
+reg1[10] => dig_v.IN1
+reg1[11] => dig_v.IN1
+reg2[0] => dig_c.IN1
+reg2[1] => dig_c.IN1
+reg2[2] => dig_c.IN1
+reg2[3] => dig_c.IN1
+reg2[4] => dig_d.IN1
+reg2[5] => dig_d.IN1
+reg2[6] => dig_d.IN1
+reg2[7] => dig_d.IN1
+reg2[8] => dig_v.IN1
+reg2[9] => dig_v.IN1
+reg2[10] => dig_v.IN1
+reg2[11] => dig_v.IN1
+reg3[0] => dig_c.IN1
+reg3[1] => dig_c.IN1
+reg3[2] => dig_c.IN1
+reg3[3] => dig_c.IN1
+reg3[4] => dig_d.IN1
+reg3[5] => dig_d.IN1
+reg3[6] => dig_d.IN1
+reg3[7] => dig_d.IN1
+reg3[8] => dig_v.IN1
+reg3[9] => dig_v.IN1
+reg3[10] => dig_v.IN1
+reg3[11] => dig_v.IN1
+char_out[0] <= char_out.DB_MAX_OUTPUT_PORT_TYPE
+char_out[1] <= char_out.DB_MAX_OUTPUT_PORT_TYPE
+char_out[2] <= char_out.DB_MAX_OUTPUT_PORT_TYPE
+char_out[3] <= char_out.DB_MAX_OUTPUT_PORT_TYPE
+font_col[0] <= pixel_x[2].DB_MAX_OUTPUT_PORT_TYPE
+font_col[1] <= pixel_x[3].DB_MAX_OUTPUT_PORT_TYPE
+font_col[2] <= pixel_x[4].DB_MAX_OUTPUT_PORT_TYPE
+font_row[0] <= pixel_y[2].DB_MAX_OUTPUT_PORT_TYPE
+font_row[1] <= pixel_y[3].DB_MAX_OUTPUT_PORT_TYPE
+font_row[2] <= pixel_y[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ROM:fuente
+clk => data_out~reg0.CLK
+char_address[0] => Mux19.IN131
+char_address[1] => Mux19.IN130
+char_address[2] => Mux19.IN129
+char_address[3] => Mux19.IN128
+font_col[0] => Mux0.IN10
+font_col[0] => Mux2.IN10
+font_col[0] => Mux3.IN5
+font_col[0] => Mux4.IN10
+font_col[0] => Mux5.IN10
+font_col[0] => Mux6.IN10
+font_col[0] => Mux7.IN10
+font_col[0] => Mux8.IN10
+font_col[0] => Mux9.IN10
+font_col[0] => Mux10.IN10
+font_col[0] => Mux11.IN5
+font_col[0] => Mux12.IN10
+font_col[0] => Mux13.IN10
+font_col[0] => Mux14.IN10
+font_col[0] => Mux15.IN10
+font_col[0] => Mux16.IN10
+font_col[0] => Mux17.IN10
+font_col[1] => Mux0.IN9
+font_col[1] => Mux1.IN5
+font_col[1] => Mux2.IN9
+font_col[1] => Mux3.IN4
+font_col[1] => Mux4.IN9
+font_col[1] => Mux5.IN9
+font_col[1] => Mux6.IN9
+font_col[1] => Mux7.IN9
+font_col[1] => Mux8.IN9
+font_col[1] => Mux9.IN9
+font_col[1] => Mux10.IN9
+font_col[1] => Mux11.IN4
+font_col[1] => Mux12.IN9
+font_col[1] => Mux13.IN9
+font_col[1] => Mux14.IN9
+font_col[1] => Mux15.IN9
+font_col[1] => Mux16.IN9
+font_col[1] => Mux17.IN9
+font_col[1] => Mux18.IN5
+font_col[2] => Mux0.IN8
+font_col[2] => Mux1.IN4
+font_col[2] => Mux2.IN8
+font_col[2] => Mux4.IN8
+font_col[2] => Mux5.IN8
+font_col[2] => Mux6.IN8
+font_col[2] => Mux7.IN8
+font_col[2] => Mux8.IN8
+font_col[2] => Mux9.IN8
+font_col[2] => Mux10.IN8
+font_col[2] => Mux12.IN8
+font_col[2] => Mux13.IN8
+font_col[2] => Mux14.IN8
+font_col[2] => Mux15.IN8
+font_col[2] => Mux16.IN8
+font_col[2] => Mux17.IN8
+font_col[2] => Mux18.IN4
+font_row[0] => Mux19.IN134
+font_row[1] => Mux19.IN133
+font_row[2] => Mux19.IN132
+data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff
+clk_i => ffd:base_ff.clk
+rst_i => ffd:base_ff.rst
+ena_i => d_int.IN0
+ena_i => d_int.IN1
+d_i => d_int.IN1
+q_o <= ffd:base_ff.q
+
+
+|acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff|ffd:base_ff
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

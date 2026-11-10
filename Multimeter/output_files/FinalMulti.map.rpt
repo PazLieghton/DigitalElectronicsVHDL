@@ -1,0 +1,946 @@
+Analysis & Synthesis report for FinalMulti
+Tue Nov 10 16:12:47 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Source assignments for Top-level Entity: |acyiib
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |acyiib
+ 11. Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal
+ 12. Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical
+ 13. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff"
+ 14. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff"
+ 15. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff"
+ 16. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto"
+ 17. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs"
+ 18. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs"
+ 19. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3"
+ 20. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2"
+ 21. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1"
+ 22. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical"
+ 23. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal"
+ 24. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1"
+ 25. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f"
+ 26. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f"
+ 27. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f"
+ 28. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f"
+ 29. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f"
+ 30. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f"
+ 31. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f"
+ 32. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f"
+ 33. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f"
+ 34. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|ffd_en:ffd_i"
+ 35. Port Connectivity Checks: "Voltimetro_toplevel:nucleo"
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 10 16:12:47 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; FinalMulti                                      ;
+; Top-level Entity Name              ; acyiib                                          ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 365                                             ;
+;     Total combinational functions  ; 290                                             ;
+;     Dedicated logic registers      ; 148                                             ;
+; Total registers                    ; 148                                             ;
+; Total pins                         ; 48                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; acyiib             ; FinalMulti         ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+; Voltimetro_toplevel.vhd          ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/Voltimetro_toplevel.vhd ;         ;
+; Voltimetro.vhd                   ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/Voltimetro.vhd          ;         ;
+; Vga_lab.vhd                      ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/Vga_lab.vhd             ;         ;
+; sigma_delta.vhd                  ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/sigma_delta.vhd         ;         ;
+; ROM_EP2C5.vhd                    ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/ROM_EP2C5.vhd           ;         ;
+; reg_12bit.vhd                    ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/reg_12bit.vhd           ;         ;
+; mux_logic.vhd                    ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/mux_logic.vhd           ;         ;
+; ffd_en.vhd                       ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/ffd_en.vhd              ;         ;
+; ffd.vhd                          ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/ffd.vhd                 ;         ;
+; contador_binario10.vhd           ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/contador_binario10.vhd  ;         ;
+; canal_medicion.vhd               ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/canal_medicion.vhd      ;         ;
+; bin_counter.vhd                  ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/bin_counter.vhd         ;         ;
+; bcd_counter_3d.vhd               ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/bcd_counter_3d.vhd      ;         ;
+; bcd_counter.vhd                  ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/bcd_counter.vhd         ;         ;
+; acyiib_impl.vhd                  ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/acyiib_impl.vhd         ;         ;
+; acyiib.vhd                       ; yes             ; User VHDL File  ; E:/AlteraSlop/Multimeter/acyiib.vhd              ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                         ;
++---------------------------------------------+-------------------------------------------------------+
+; Resource                                    ; Usage                                                 ;
++---------------------------------------------+-------------------------------------------------------+
+; Estimated Total logic elements              ; 365                                                   ;
+;                                             ;                                                       ;
+; Total combinational functions               ; 290                                                   ;
+; Logic element usage by number of LUT inputs ;                                                       ;
+;     -- 4 input functions                    ; 188                                                   ;
+;     -- 3 input functions                    ; 83                                                    ;
+;     -- <=2 input functions                  ; 19                                                    ;
+;                                             ;                                                       ;
+; Logic elements by mode                      ;                                                       ;
+;     -- normal mode                          ; 290                                                   ;
+;     -- arithmetic mode                      ; 0                                                     ;
+;                                             ;                                                       ;
+; Total registers                             ; 148                                                   ;
+;     -- Dedicated logic registers            ; 148                                                   ;
+;     -- I/O registers                        ; 0                                                     ;
+;                                             ;                                                       ;
+; I/O pins                                    ; 48                                                    ;
+; Embedded Multiplier 9-bit elements          ; 0                                                     ;
+; Maximum fan-out node                        ; Voltimetro_toplevel:nucleo|ffd_en:ffd_i|ffd:base_ff|q ;
+; Maximum fan-out                             ; 148                                                   ;
+; Total fan-out                               ; 1413                                                  ;
+; Average fan-out                             ; 2.91                                                  ;
++---------------------------------------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Library Name ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |acyiib                                     ; 290 (0)           ; 148 (0)      ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |acyiib                                                                                                                              ; work         ;
+;    |Voltimetro_toplevel:nucleo|             ; 290 (0)           ; 148 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo                                                                                                   ; work         ;
+;       |Voltimetro:voltimetro_i|             ; 289 (0)           ; 147 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i                                                                           ; work         ;
+;          |Vga_lab:pantalla|                 ; 203 (21)          ; 63 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla                                                          ; work         ;
+;             |ROM:fuente|                    ; 77 (77)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ROM:fuente                                               ; work         ;
+;             |contador_binario10:horizontal| ; 17 (7)            ; 10 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal                            ; work         ;
+;                |ffd:\bits_ff:0:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:0:ff          ; work         ;
+;                |ffd:\bits_ff:1:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:1:ff          ; work         ;
+;                |ffd:\bits_ff:2:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:2:ff          ; work         ;
+;                |ffd:\bits_ff:3:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:3:ff          ; work         ;
+;                |ffd:\bits_ff:4:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:4:ff          ; work         ;
+;                |ffd:\bits_ff:5:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:5:ff          ; work         ;
+;                |ffd:\bits_ff:6:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:6:ff          ; work         ;
+;                |ffd:\bits_ff:7:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:7:ff          ; work         ;
+;                |ffd:\bits_ff:8:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:8:ff          ; work         ;
+;                |ffd:\bits_ff:9:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal|ffd:\bits_ff:9:ff          ; work         ;
+;             |contador_binario10:vertical|   ; 17 (7)            ; 10 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical                              ; work         ;
+;                |ffd:\bits_ff:0:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:0:ff            ; work         ;
+;                |ffd:\bits_ff:1:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:1:ff            ; work         ;
+;                |ffd:\bits_ff:2:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:2:ff            ; work         ;
+;                |ffd:\bits_ff:3:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:3:ff            ; work         ;
+;                |ffd:\bits_ff:4:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:4:ff            ; work         ;
+;                |ffd:\bits_ff:5:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:5:ff            ; work         ;
+;                |ffd:\bits_ff:6:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:6:ff            ; work         ;
+;                |ffd:\bits_ff:7:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:7:ff            ; work         ;
+;                |ffd:\bits_ff:8:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:8:ff            ; work         ;
+;                |ffd:\bits_ff:9:ff|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical|ffd:\bits_ff:9:ff            ; work         ;
+;             |ffd_en:\ret_rgb:0:ff|          ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff                                     ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff|ffd:base_ff                         ; work         ;
+;             |ffd_en:\ret_rgb:1:ff|          ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff                                     ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff|ffd:base_ff                         ; work         ;
+;             |ffd_en:\ret_rgb:2:ff|          ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff                                     ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff|ffd:base_ff                         ; work         ;
+;             |ffd_en:ret_hs|                 ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs                                            ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs|ffd:base_ff                                ; work         ;
+;             |ffd_en:ret_texto|              ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto                                         ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto|ffd:base_ff                             ; work         ;
+;             |ffd_en:ret_vs|                 ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs                                            ; work         ;
+;                |ffd:base_ff|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs|ffd:base_ff                                ; work         ;
+;             |mux_logic:texto|               ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|mux_logic:texto                                          ; work         ;
+;             |reg_12bit:frame1|              ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1                                         ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:0:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:0:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:10:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:10:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:11:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:11:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:1:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:1:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:2:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:2:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:3:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:3:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:4:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:4:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:5:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:5:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:6:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:6:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:7:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:7:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:8:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:8:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:9:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:9:f|ffd:base_ff          ; work         ;
+;             |reg_12bit:frame2|              ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2                                         ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:0:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:0:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:10:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:10:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:11:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:11:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:1:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:1:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:2:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:2:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:3:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:3:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:4:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:4:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:5:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:5:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:6:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:6:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:7:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:7:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:8:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:8:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:9:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2|ffd_en:\ff_gen:9:f|ffd:base_ff          ; work         ;
+;             |reg_12bit:frame3|              ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3                                         ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:0:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:0:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:10:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:10:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:11:f                     ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:11:f|ffd:base_ff         ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:1:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:1:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:2:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:2:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:3:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:3:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:4:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:4:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:5:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:5:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:6:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:6:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:7:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:7:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:8:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:8:f|ffd:base_ff          ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:9:f                      ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3|ffd_en:\ff_gen:9:f|ffd:base_ff          ; work         ;
+;          |bin_counter:ventana|              ; 14 (5)            ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana                                                       ; work         ;
+;             |ffd_en:\ff_gen:0:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:1:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:2:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:3:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:4:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:5:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:6:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:7:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f|ffd:base_ff                        ; work         ;
+;             |ffd_en:\ff_gen:8:f|            ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f                                    ; work         ;
+;                |ffd:base_ff|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f|ffd:base_ff                        ; work         ;
+;          |canal_medicion:canal1|            ; 24 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1                                                     ; work         ;
+;             |bcd_counter_3d:contador|       ; 24 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador                             ; work         ;
+;                |bcd_counter:H1|             ; 7 (3)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3     ; work         ;
+;                |bcd_counter:T1|             ; 9 (5)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3     ; work         ;
+;                |bcd_counter:U1|             ; 8 (4)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3     ; work         ;
+;             |reg_12bit:resultado|           ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado                                 ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:0:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:10:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:11:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:1:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:2:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:3:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:4:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:5:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:6:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:7:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:8:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:9:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff  ; work         ;
+;             |sigma_delta:entrada|           ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada                                 ; work         ;
+;                |ffd:ffd_inst|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada|ffd:ffd_inst                    ; work         ;
+;          |canal_medicion:canal2|            ; 24 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2                                                     ; work         ;
+;             |bcd_counter_3d:contador|       ; 24 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador                             ; work         ;
+;                |bcd_counter:H1|             ; 7 (3)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3     ; work         ;
+;                |bcd_counter:T1|             ; 9 (5)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3     ; work         ;
+;                |bcd_counter:U1|             ; 8 (4)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3     ; work         ;
+;             |reg_12bit:resultado|           ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado                                 ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:0:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:10:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:11:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:1:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:2:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:3:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:4:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:5:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:6:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:7:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:8:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:9:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff  ; work         ;
+;             |sigma_delta:entrada|           ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|sigma_delta:entrada                                 ; work         ;
+;                |ffd:ffd_inst|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal2|sigma_delta:entrada|ffd:ffd_inst                    ; work         ;
+;          |canal_medicion:canal3|            ; 24 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3                                                     ; work         ;
+;             |bcd_counter_3d:contador|       ; 24 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador                             ; work         ;
+;                |bcd_counter:H1|             ; 7 (3)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:H1|ffd:ffd3     ; work         ;
+;                |bcd_counter:T1|             ; 9 (5)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:T1|ffd:ffd3     ; work         ;
+;                |bcd_counter:U1|             ; 8 (4)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1              ; work         ;
+;                   |ffd:ffd0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd0     ; work         ;
+;                   |ffd:ffd1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd1     ; work         ;
+;                   |ffd:ffd2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd2     ; work         ;
+;                   |ffd:ffd3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|bcd_counter_3d:contador|bcd_counter:U1|ffd:ffd3     ; work         ;
+;             |reg_12bit:resultado|           ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado                                 ; work         ;
+;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:0:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:0:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:10:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:10:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:10:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:11:f|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:11:f             ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:11:f|ffd:base_ff ; work         ;
+;                |ffd_en:\ff_gen:1:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:1:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:1:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:2:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:2:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:2:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:3:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:3:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:3:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:4:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:4:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:4:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:5:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:5:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:5:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:6:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:6:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:6:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:7:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:7:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:7:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:8:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:8:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:8:f|ffd:base_ff  ; work         ;
+;                |ffd_en:\ff_gen:9:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:9:f              ; work         ;
+;                   |ffd:base_ff|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|reg_12bit:resultado|ffd_en:\ff_gen:9:f|ffd:base_ff  ; work         ;
+;             |sigma_delta:entrada|           ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|sigma_delta:entrada                                 ; work         ;
+;                |ffd:ffd_inst|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal3|sigma_delta:entrada|ffd:ffd_inst                    ; work         ;
+;       |ffd_en:ffd_i|                        ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|ffd_en:ffd_i                                                                                      ; work         ;
+;          |ffd:base_ff|                      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|ffd_en:ffd_i|ffd:base_ff                                                                          ; work         ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 148   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Source assignments for Top-level Entity: |acyiib ;
++------------+---------+------+--------------------+
+; Assignment ; Value   ; From ; To                 ;
++------------+---------+------+--------------------+
+; LOCATION   ; Pin_40  ; -    ; p1[1]              ;
+; LOCATION   ; Pin_41  ; -    ; p1[2]              ;
+; LOCATION   ; Pin_42  ; -    ; p1[3]              ;
+; LOCATION   ; Pin_43  ; -    ; p1[4]              ;
+; LOCATION   ; Pin_44  ; -    ; p1[5]              ;
+; LOCATION   ; Pin_45  ; -    ; p1[6]              ;
+; LOCATION   ; Pin_47  ; -    ; p1[7]              ;
+; LOCATION   ; Pin_48  ; -    ; p1[8]              ;
+; LOCATION   ; Pin_51  ; -    ; p1[9]              ;
+; LOCATION   ; Pin_52  ; -    ; p1[10]             ;
+; LOCATION   ; Pin_53  ; -    ; p1[11]             ;
+; LOCATION   ; Pin_55  ; -    ; p1[12]             ;
+; LOCATION   ; Pin_57  ; -    ; p1[13]             ;
+; LOCATION   ; Pin_58  ; -    ; p1[14]             ;
+; LOCATION   ; Pin_59  ; -    ; p1[15]             ;
+; LOCATION   ; Pin_60  ; -    ; p1[16]             ;
+; LOCATION   ; Pin_63  ; -    ; p1[17]             ;
+; LOCATION   ; Pin_64  ; -    ; p1[18]             ;
+; LOCATION   ; Pin_65  ; -    ; p1[19]             ;
+; LOCATION   ; Pin_67  ; -    ; p1[20]             ;
+; LOCATION   ; Pin_69  ; -    ; p1[21]             ;
+; LOCATION   ; Pin_70  ; -    ; p1[22]             ;
+; LOCATION   ; Pin_71  ; -    ; p1[23]             ;
+; LOCATION   ; Pin_72  ; -    ; p1[24]             ;
+; LOCATION   ; Pin_73  ; -    ; p2_io1[3]          ;
+; LOCATION   ; Pin_74  ; -    ; p2_io1[4]          ;
+; LOCATION   ; Pin_75  ; -    ; p2_io1[5]          ;
+; LOCATION   ; Pin_76  ; -    ; p2_io1[6]          ;
+; LOCATION   ; Pin_79  ; -    ; p2_io1[7]          ;
+; LOCATION   ; Pin_80  ; -    ; p2_io1[8]          ;
+; LOCATION   ; Pin_81  ; -    ; p2_io1[9]          ;
+; LOCATION   ; Pin_86  ; -    ; p2_io1[10]         ;
+; LOCATION   ; Pin_87  ; -    ; p2_io1[11]         ;
+; LOCATION   ; Pin_88  ; -    ; p2_in[12]          ;
+; LOCATION   ; Pin_89  ; -    ; p2_in[13]          ;
+; LOCATION   ; Pin_90  ; -    ; p2_in[14]          ;
+; LOCATION   ; Pin_91  ; -    ; p2_in[15]          ;
+; LOCATION   ; Pin_92  ; -    ; p2_io2[16]         ;
+; LOCATION   ; Pin_93  ; -    ; p2_io2[17]         ;
+; LOCATION   ; Pin_94  ; -    ; p2_io2[18]         ;
+; LOCATION   ; Pin_96  ; -    ; p2_io2[19]         ;
+; LOCATION   ; Pin_97  ; -    ; p2_io2[20]         ;
+; LOCATION   ; Pin_99  ; -    ; p2_io2[21]         ;
+; LOCATION   ; Pin_100 ; -    ; p2_io2[22]         ;
+; LOCATION   ; Pin_101 ; -    ; p2_io2[23]         ;
+; LOCATION   ; Pin_103 ; -    ; p2_io2[24]         ;
+; LOCATION   ; Pin_104 ; -    ; p2_io2[25]         ;
+; LOCATION   ; Pin_17  ; -    ; osc_50mhz          ;
++------------+---------+------+--------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |acyiib ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; debug          ; false ; Enumerated                                    ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal ;
++----------------+------------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value      ; Type                                                                                                             ;
++----------------+------------+------------------------------------------------------------------------------------------------------------------+
+; last           ; 1100011111 ; Unsigned Binary                                                                                                  ;
++----------------+------------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical ;
++----------------+------------+----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value      ; Type                                                                                                           ;
++----------------+------------+----------------------------------------------------------------------------------------------------------------+
+; last           ; 1000001100 ; Unsigned Binary                                                                                                ;
++----------------+------------+----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:2:ff" ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                   ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                              ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                              ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:1:ff" ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                   ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                              ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                              ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:\ret_rgb:0:ff" ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                   ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                              ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                              ;
++-------+-------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_texto" ;
++-------+-------+----------+---------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                               ;
++-------+-------+----------+---------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                          ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                          ;
++-------+-------+----------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_vs" ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                       ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs" ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                       ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3" ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2" ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1" ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                          ;
++-------+-------+----------+--------------------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                                     ;
++-------+-------+----------+--------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal" ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                            ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                                                                                       ;
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                                       ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1" ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                          ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------+
+; co   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                              ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f" ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                    ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+; ena_i ; Input ; Info     ; Stuck at VCC                                                                               ;
++-------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|ffd_en:ffd_i" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                             ;
+; ena_i ; Input ; Info     ; Stuck at VCC                             ;
++-------+-------+----------+------------------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo" ;
++-------+-------+----------+-----------------------------+
+; Port  ; Type  ; Severity ; Details                     ;
++-------+-------+----------+-----------------------------+
+; rst_i ; Input ; Info     ; Stuck at GND                ;
++-------+-------+----------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Nov 10 16:12:40 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalMulti -c FinalMulti
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file voltimetro_toplevel.vhd
+    Info (12022): Found design unit 1: Voltimetro_toplevel-Voltimetro_toplevel_arq
+    Info (12023): Found entity 1: Voltimetro_toplevel
+Info (12021): Found 2 design units, including 1 entities, in source file voltimetro.vhd
+    Info (12022): Found design unit 1: Voltimetro-estructural
+    Info (12023): Found entity 1: Voltimetro
+Info (12021): Found 2 design units, including 1 entities, in source file vga_lab.vhd
+    Info (12022): Found design unit 1: Vga_lab-estructural
+    Info (12023): Found entity 1: Vga_lab
+Info (12021): Found 2 design units, including 1 entities, in source file sigma_delta.vhd
+    Info (12022): Found design unit 1: sigma_delta-structural
+    Info (12023): Found entity 1: sigma_delta
+Info (12021): Found 2 design units, including 1 entities, in source file rom_ep2c5.vhd
+    Info (12022): Found design unit 1: ROM-ROM_arq
+    Info (12023): Found entity 1: ROM
+Info (12021): Found 2 design units, including 1 entities, in source file reg_12bit.vhd
+    Info (12022): Found design unit 1: reg_12bit-structural
+    Info (12023): Found entity 1: reg_12bit
+Info (12021): Found 2 design units, including 1 entities, in source file mux_logic.vhd
+    Info (12022): Found design unit 1: mux_logic-structural
+    Info (12023): Found entity 1: mux_logic
+Info (12021): Found 2 design units, including 1 entities, in source file ffd_en.vhd
+    Info (12022): Found design unit 1: ffd_en-adaptador
+    Info (12023): Found entity 1: ffd_en
+Info (12021): Found 2 design units, including 1 entities, in source file ffd.vhd
+    Info (12022): Found design unit 1: ffd-ffd_arq
+    Info (12023): Found entity 1: ffd
+Info (12021): Found 2 design units, including 1 entities, in source file contador_binario10.vhd
+    Info (12022): Found design unit 1: contador_binario10-estructural
+    Info (12023): Found entity 1: contador_binario10
+Info (12021): Found 2 design units, including 1 entities, in source file canal_medicion.vhd
+    Info (12022): Found design unit 1: canal_medicion-estructural
+    Info (12023): Found entity 1: canal_medicion
+Info (12021): Found 2 design units, including 1 entities, in source file bin_counter.vhd
+    Info (12022): Found design unit 1: bin_counter-structural
+    Info (12023): Found entity 1: bin_counter
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_counter_3d.vhd
+    Info (12022): Found design unit 1: bcd_counter_3d-structural
+    Info (12023): Found entity 1: bcd_counter_3d
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_counter.vhd
+    Info (12022): Found design unit 1: bcd_counter-structural
+    Info (12023): Found entity 1: bcd_counter
+Info (12021): Found 1 design units, including 0 entities, in source file acyiib_impl.vhd
+    Info (12022): Found design unit 1: acyiib-voltimetro_3canales
+Info (12021): Found 1 design units, including 1 entities, in source file acyiib.vhd
+    Info (12023): Found entity 1: acyiib
+Info (12127): Elaborating entity "acyiib" for the top level hierarchy
+Info (12129): Elaborating entity "Voltimetro_toplevel" using architecture "A:voltimetro_toplevel_arq" for hierarchy "Voltimetro_toplevel:nucleo"
+Info (12128): Elaborating entity "ffd_en" for hierarchy "Voltimetro_toplevel:nucleo|ffd_en:ffd_i"
+Info (12129): Elaborating entity "ffd" using architecture "A:ffd_arq" for hierarchy "Voltimetro_toplevel:nucleo|ffd_en:ffd_i|ffd:base_ff"
+Info (12128): Elaborating entity "Voltimetro" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i"
+Info (12129): Elaborating entity "bin_counter" using architecture "A:structural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana"
+Info (12129): Elaborating entity "canal_medicion" using architecture "A:estructural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1"
+Info (12129): Elaborating entity "sigma_delta" using architecture "A:structural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada"
+Info (12128): Elaborating entity "ffd" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|sigma_delta:entrada|ffd:ffd_inst"
+Info (12129): Elaborating entity "bcd_counter_3d" using architecture "A:structural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador"
+Info (12128): Elaborating entity "bcd_counter" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:U1"
+Info (12129): Elaborating entity "reg_12bit" using architecture "A:structural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|reg_12bit:resultado"
+Info (12129): Elaborating entity "Vga_lab" using architecture "A:estructural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla"
+Info (12129): Elaborating entity "contador_binario10" using architecture "A:estructural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal"
+Info (12129): Elaborating entity "contador_binario10" using architecture "A:estructural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical"
+Info (12129): Elaborating entity "mux_logic" using architecture "A:structural" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|mux_logic:texto"
+Info (12129): Elaborating entity "ROM" using architecture "A:rom_arq" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ROM:fuente"
+Info (12129): Elaborating entity "ffd_en" using architecture "A:adaptador" for hierarchy "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd_en:ret_hs"
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io1[11]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io1[10]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io1[9]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io1[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io1[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io2[21]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io2[19]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "p2_io2[16]" and its non-tri-state driver.
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "p2_io1[11]~synth"
+    Warning (13010): Node "p2_io1[10]~synth"
+    Warning (13010): Node "p2_io1[9]~synth"
+    Warning (13010): Node "p2_io1[8]~synth"
+    Warning (13010): Node "p2_io1[7]~synth"
+    Warning (13010): Node "p2_io2[21]~synth"
+    Warning (13010): Node "p2_io2[19]~synth"
+    Warning (13010): Node "p2_io2[16]~synth"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "p2_in[15]"
+Info (21057): Implemented 413 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 0 output pins
+    Info (21060): Implemented 43 bidirectional pins
+    Info (21061): Implemented 365 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4636 megabytes
+    Info: Processing ended: Tue Nov 10 16:12:47 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

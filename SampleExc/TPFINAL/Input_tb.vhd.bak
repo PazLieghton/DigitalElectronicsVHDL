@@ -5,7 +5,7 @@ entity mainsig_tb is
 end mainsig_tb;
 
 architecture mainsig_tb_arq of mainsig_tb is
-    -- Declare the component to test
+    --Testbench declaracion para probar mainsig de input
     component mainsig is
         port (
             clk    : in bit;
@@ -14,20 +14,19 @@ architecture mainsig_tb_arq of mainsig_tb is
         );
     end component;
 
-    -- Testbench signals
+    -- Signlas
     signal clk_tb    : bit := '0';
     signal rst_tb    : bit := '1';
-    signal clk_25_tb : bit; -- Fixed: This is a single bit, not a vector
+    signal clk_25_tb : bit; -- Fixed: Este es fijo
 
 begin
-    -- 1. Generate the 50 MHz clock (Period = 20 ns)
-    -- Toggles every 10 ns
+	--Genero una senial de 50 MHz y tiene un retardo de 10ns
     clk_tb <= not clk_tb after 10 ns;
     
-    -- 2. Generate the reset signal
+    -- Genero la senial reset
     rst_tb <= '0' after 35 ns;
 
-    -- 3. Instantiate the Device Under Test (DUT)
+    -- Inicializo el TB
     DUT: mainsig
         port map(
             clk    => clk_tb,

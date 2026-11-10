@@ -22,8 +22,8 @@ architecture mainsig_arq of mainsig is
     signal d_int : bit;
     
 begin
-    -- 3. The core logic: D = NOT Q
-    d_int <= not q_int;
+    -- . The core logic: D = NOT Q
+    d_it <= not q_int;
 
     -- 4. Instantiate the FFD
     ffd_inst: ffd

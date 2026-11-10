@@ -14,7 +14,7 @@ entity bcd_counter is
 end bcd_counter;
 
 architecture structural of bcd_counter is
-    -- Declare the teacher's FFD
+    --FFD Declarado de profesor
     component ffd is
         port(
             clk : in bit;
