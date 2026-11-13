@@ -1,5 +1,4 @@
--- Contador sincronico de 10 bits, estructural, con habilitacion.
--- LAST es el ultimo estado incluido: por ejemplo 799 o 524 en binario.
+-- Contador síncrono de 10 bits con habilitación. LAST fija el último valor del recorrido.
 
 entity contador_binario10 is
     generic (LAST : bit_vector(9 downto 0));
@@ -14,7 +13,7 @@ architecture estructural of contador_binario10 is
     signal q, d, t, coincide : bit_vector(9 downto 0);
     signal ultimo, reset_ff : bit;
 begin
-    -- Comparador XNOR seguido de AND: Q coincide con LAST.
+    -- La salida de fin de cuenta se activa cuando todos los bits coinciden con LAST.
     ultimo <= coincide(9) and coincide(8) and coincide(7) and coincide(6)
           and coincide(5) and coincide(4) and coincide(3) and coincide(2)
           and coincide(1) and coincide(0);
@@ -22,7 +21,7 @@ begin
     -- El retorno a cero ocurre en el siguiente flanco habilitado.
     reset_ff <= rst_i or (ultimo and ena_i);
 
-    -- Condiciones de conmutacion de cada bit (acarreo).
+    -- El acarreo habilita la conmutación del bit siguiente.
     t(0) <= ena_i;
     t(1) <= t(0) and q(0);
     t(2) <= t(1) and q(1);

@@ -1,7 +1,4 @@
-----------------------------------------------------------------------------------
--- reg_12bit : registro de 12 bits con enable
---   ffd_en agrega habilitacion sin cambiar la interfaz del FFD original.
-----------------------------------------------------------------------------------
+-- Registro de 12 bits. Una habilitación común permite capturar los tres dígitos BCD a la vez.
 entity reg_12bit is
     port (
         clk   : in  bit;

@@ -1,0 +1,2 @@
+Bug en canal 1 el minimo es 0.45
+El canal 2 y 3no andan, porque estan mal asignados los pines

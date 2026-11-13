@@ -1,7 +1,6 @@
--- VGA: tres lecturas BCD reales, una por canal, con barras de comprobacion.
--- Entrada: 25 MHz, ya divididos por el top-level original.
--- 640x480 visibles, 800x525 totales, HS/VS activos en cero.
--- Nueva logica sintetizable: solo instancias, cables y compuertas.
+-- Salida VGA de 640 x 480 píxeles con reloj de 25 MHz y sincronismos activos en bajo.
+library ieee;
+use ieee.numeric_bit.all;
 
 entity Vga_lab is
     port (
@@ -16,42 +15,38 @@ architecture estructural of Vga_lab is
     signal fin_linea, fin_cuadro, captura_cuadro : bit;
     signal reg1_frame, reg2_frame, reg3_frame : bit_vector(11 downto 0);
     signal font_col, font_row : bit_vector(2 downto 0);
-    signal visible, hs, vs, hs_q, vs_q : bit;
-    signal fila0, fila1, fila2, texto_en, texto_en_q : bit;
+    signal visible, hs, vs, visible_q : bit;
     signal caracter : bit_vector(3 downto 0);
-    signal punto_rom, texto_pixel : bit;
-    signal barra_y, marca_x : bit;
-    signal rgb_fondo, rgb_fondo_q : bit_vector(2 downto 0);
+    signal punto_rom : bit;
+
+    signal panel : bit_vector(1 to 3);
+    signal lectura_fila, avance, iguales : bit_vector(11 downto 0);
+    signal fila_barra, columna_barra, en_barra, nivel_alcanzado : bit;
+    signal relleno, escala, punto_barra : bit;
+    signal rgb_barra, rgb_barra_q : bit_vector(2 downto 0);
 begin
     horizontal : entity work.contador_binario10(estructural)
         generic map (LAST => "1100011111") -- 799
         port map (clk_i => clk_i, rst_i => '0', ena_i => '1',
                   q_o => h, ultimo_o => fin_linea);
 
-    -- El reloj sigue siendo 25 MHz: fin_linea es ENABLE, no otro reloj.
+    -- El contador vertical avanza un paso al terminar cada línea.
     vertical : entity work.contador_binario10(estructural)
         generic map (LAST => "1000001100") -- 524
         port map (clk_i => clk_i, rst_i => '0', ena_i => fin_linea,
                   q_o => v, ultimo_o => fin_cuadro);
 
-    -- Visible: h=0..639, v=0..479. Decodificacion con compuertas.
     visible <= not (h(9) and (h(8) or h(7)))
            and not v(9) and not (v(8) and v(7) and v(6) and v(5));
 
-    -- HS bajo en 656..751; VS bajo en 490..491.
+    -- HS permanece bajo de 656 a 751 y VS de 490 a 491, extremos incluidos.
     hs <= not (h(9) and not h(8) and h(7)
            and (h(6) or h(5) or h(4))
            and not (h(6) and h(5) and h(4)));
     vs <= not (not v(9) and v(8) and v(7) and v(6) and v(5)
            and not v(4) and v(3) and not v(2) and v(1));
 
-    -- Tres filas de 32 pixeles de alto; caracteres 8x8 ampliados x4.
-    fila0 <= not v(9) and not v(8) and v(7) and not v(6) and not v(5);
-    fila1 <= not v(9) and not v(8) and v(7) and v(6) and v(5);
-    fila2 <= not v(9) and v(8) and not v(7) and v(6) and not v(5);
-    texto_en <= visible and (fila0 or fila1 or fila2);
-
-    -- Congelar las tres lecturas durante un cuadro: evita mezclar digitos.
+    -- Las tres lecturas cambian juntas entre dos cuadros.
     captura_cuadro <= fin_linea and fin_cuadro;
     frame1 : entity work.reg_12bit(structural)
         port map (clk => clk_i, rst => '0', ena => captura_cuadro,
@@ -66,40 +61,52 @@ begin
     texto : entity work.mux_logic(structural)
         port map (pixel_x => h, pixel_y => v,
                   reg1 => reg1_frame, reg2 => reg2_frame, reg3 => reg3_frame,
-                  char_out => caracter, font_col => font_col, font_row => font_row);
+                  char_out => caracter, font_col => font_col, font_row => font_row,
+                  panel_o => panel, lectura_fila_o => lectura_fila);
 
     fuente : entity work.ROM(ROM_arq)
         port map (clk => clk_i, char_address => caracter,
-                  font_col => font_col, font_row => font_row,
-                  data_out => punto_rom);
+                  font_col => font_col, font_row => font_row, data_out => punto_rom);
 
-    -- Barras arriba y marcadores de canal junto a los textos.
-    barra_y <= not v(9) and not v(8) and not v(7) and (v(6) xor v(5));
-    marca_x <= not h(9) and not h(8) and h(7) and not h(6);
-    rgb_fondo(2) <= visible and ((barra_y and not h(9) and not h(8) and h(7))
-                              or (marca_x and fila0));
-    rgb_fondo(1) <= visible and ((barra_y and not h(9) and h(8) and not h(7))
-                              or (marca_x and fila1));
-    rgb_fondo(0) <= visible and ((barra_y and not h(9) and h(8) and h(7))
-                              or (marca_x and fila2));
+    -- Las barras ocupan ocho líneas a partir de y = 144, 304 y 464.
+    fila_barra <= '1' when unsigned(v(9 downto 3)) = 18
+                        or unsigned(v(9 downto 3)) = 38
+                        or unsigned(v(9 downto 3)) = 58 else '0';
+    -- Los 330 píxeles de la escala dejan 155 de margen a cada lado. Cada píxel vale 0,01 V.
+    columna_barra <= '1' when unsigned(h) >= 155 and unsigned(h) <= 484 else '0';
+    en_barra <= fila_barra and columna_barra;
 
-    -- La ROM es SINCRONICA: retrasar tambien las otras senales un ciclo.
-    ret_hs : entity work.ffd_en(adaptador)
-        port map (clk_i => clk_i, rst_i => '0', ena_i => '1', d_i => hs, q_o => hs_q);
-    ret_vs : entity work.ffd_en(adaptador)
-        port map (clk_i => clk_i, rst_i => '0', ena_i => '1', d_i => vs, q_o => vs_q);
-    ret_texto : entity work.ffd_en(adaptador)
-        port map (clk_i => clk_i, rst_i => '0', ena_i => '1', d_i => texto_en, q_o => texto_en_q);
-    ret_rgb : for i in 0 to 2 generate
-        ff : entity work.ffd_en(adaptador)
-            port map (clk_i => clk_i, rst_i => '0', ena_i => '1',
-                      d_i => rgb_fondo(i), q_o => rgb_fondo_q(i));
+    -- El barrido cuenta píxeles en BCD hasta igualar la lectura del canal.
+    -- Se reutiliza el mismo contador en las tres barras.
+    contador_barra : entity work.bcd_counter_3d(structural)
+        port map (clk => clk_i, rst => fin_linea, ena => relleno, q_out => avance);
+    iguales <= not (avance xor lectura_fila);
+    nivel_alcanzado <= iguales(11) and iguales(10) and iguales(9) and iguales(8)
+                   and iguales(7) and iguales(6) and iguales(5) and iguales(4)
+                   and iguales(3) and iguales(2) and iguales(1) and iguales(0);
+    relleno <= en_barra and not nivel_alcanzado;
+
+    -- Una base punteada conserva la referencia de fondo de escala al medir cero.
+    escala <= en_barra and v(2) and v(1) and v(0) and not h(1) and not h(0);
+    punto_barra <= relleno or escala;
+    rgb_barra(2) <= punto_barra and (panel(1) or panel(3));
+    rgb_barra(1) <= punto_barra and (panel(1) or panel(2));
+    rgb_barra(0) <= punto_barra and (panel(2) or panel(3));
+
+    -- La ROM entrega el punto un ciclo después. La visibilidad, el color y los
+    -- sincronismos llevan el mismo retardo para que correspondan al mismo píxel.
+    ret_hs : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => hs, q => hs_o);
+    ret_vs : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => vs, q => vs_o);
+    ret_visible : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => visible, q => visible_q);
+    ret_rgb : for i in rgb_barra'range generate
+        ff : entity work.ffd(ffd_arq)
+            port map (clk => clk_i, rst => '0', d => rgb_barra(i), q => rgb_barra_q(i));
     end generate;
 
-    texto_pixel <= punto_rom and texto_en_q;
-    red_o <= rgb_fondo_q(2) or texto_pixel;
-    grn_o <= rgb_fondo_q(1) or texto_pixel;
-    blu_o <= rgb_fondo_q(0) or texto_pixel;
-    hs_o <= hs_q;
-    vs_o <= vs_q;
+    red_o <= visible_q and (punto_rom or rgb_barra_q(2));
+    grn_o <= visible_q and (punto_rom or rgb_barra_q(1));
+    blu_o <= visible_q and (punto_rom or rgb_barra_q(0));
 end estructural;

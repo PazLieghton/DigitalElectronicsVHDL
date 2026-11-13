@@ -1,5 +1,5 @@
 Flow report for FinalMulti
-Tue Nov 10 16:13:01 2026
+Wed Nov 11 22:57:57 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 10 16:12:59 2026           ;
+; Flow Status                        ; Successful - Wed Nov 11 22:57:54 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FinalMulti                                      ;
 ; Top-level Entity Name              ; acyiib                                          ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C5T144C8                                     ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 322 / 4,608 ( 7 % )                             ;
-;     Total combinational functions  ; 290 / 4,608 ( 6 % )                             ;
-;     Dedicated logic registers      ; 148 / 4,608 ( 3 % )                             ;
-; Total registers                    ; 148                                             ;
+; Total logic elements               ; 347 / 4,608 ( 8 % )                             ;
+;     Total combinational functions  ; 299 / 4,608 ( 6 % )                             ;
+;     Dedicated logic registers      ; 160 / 4,608 ( 3 % )                             ;
+; Total registers                    ; 160                                             ;
 ; Total pins                         ; 48 / 89 ( 54 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/10/2026 16:12:41 ;
+; Start date & time ; 11/11/2026 22:57:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FinalMulti          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------+---------------+---------------------+------------+
 ; Assignment Name                     ; Value                         ; Default Value ; Entity Name         ; Section Id ;
 +-------------------------------------+-------------------------------+---------------+---------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 9619531576453.179433796116160 ; --            ; --                  ; --         ;
+; COMPILER_SIGNATURE_ID               ; 9619531576453.179444864404060 ; --            ; --                  ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                            ; --            ; --                  ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                             ; --            ; --                  ; --         ;
 ; PARTITION_COLOR                     ; 16764057                      ; --            ; Voltimetro_toplevel ; Top        ;
@@ -94,11 +94,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 4626 MB             ; 00:00:06                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 4803 MB             ; 00:00:07                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4637 MB             ; 00:00:09                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 4803 MB             ; 00:00:06                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 4545 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4539 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:15                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4545 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

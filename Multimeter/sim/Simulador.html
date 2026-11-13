@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voltímetro · Simulador EP2C5</title>
+  <style>
+    :root { color-scheme: dark; --page: #141719; --surface: #202426; --ink: #f2f2e9; --subtle: #b4bbb8; --line: #414747; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.5 "Barlow", "Segoe UI", sans-serif; }
+    main { max-width: 1180px; margin: auto; padding: clamp(20px, 5vw, 64px); }
+    h1, h2, p, figure { margin: 0; }
+    h1 { font-size: clamp(1.9rem, 4vw, 3.4rem); font-weight: 550; line-height: 1.1; letter-spacing: -.045em; }
+    h2 { font-size: 1.2rem; font-weight: 550; letter-spacing: -.02em; }
+    header { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    header span, figcaption, .pins, .scale-label, .note { color: var(--subtle); }
+    header span, figcaption, .pins, .scale-label, .unit, output { font-family: "IBM Plex Mono", Consolas, monospace; font-size: .82rem; }
+    .desk { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(230px, 1fr); gap: clamp(22px, 4vw, 48px); align-items: start; margin-top: 30px; }
+    #vga { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; background: #000; image-rendering: pixelated; }
+    figcaption { display: flex; justify-content: space-between; margin-top: 9px; }
+    .controls { min-width: 0; }
+    .channel { padding: 17px 0 12px; border-bottom: 1px solid var(--line); }
+    .channel-head, .volts, .actions, .scale-label { display: flex; align-items: center; }
+    .channel-head, .scale-label { justify-content: space-between; gap: 10px; }
+    .channel label { font-weight: 550; }
+    .pins { display: block; font-size: .75rem; }
+    .volts { gap: 5px; }
+    .volts input { width: 5.4em; padding: 5px; border: 1px solid var(--line); border-radius: 4px; font: 1.15rem "IBM Plex Mono", Consolas, monospace; font-variant-numeric: tabular-nums; color: var(--ink); background: var(--surface); text-align: right; }
+    input[type=range] { display: block; width: 100%; height: 28px; margin: 10px 0 0; accent-color: var(--channel); }
+    .scale-label { margin-top: 4px; font-size: .73rem; }
+    .actions { gap: 9px; flex-wrap: wrap; margin-top: 20px; }
+    button { padding: 9px 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; font: inherit; cursor: pointer; }
+    button:first-child { background: var(--ink); color: var(--page); border-color: var(--ink); }
+    button:hover { filter: brightness(1.15); }
+    :focus-visible { outline: 3px solid #91c7ff; outline-offset: 3px; }
+    details { margin-top: 28px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 550; }
+    .trace { display: grid; grid-template-columns: 4.8em minmax(0,1fr) 6.4em; align-items: center; gap: 12px; padding-top: 7px; }
+    .trace canvas { width: 100%; height: 26px; }
+    .trace output { text-align: right; }
+    .note { font-size: .9rem; margin-top: 12px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    @media (max-width: 750px) { header { align-items: flex-start; flex-direction: column; gap: 5px; } .desk { grid-template-columns: 1fr; } .channel { padding-top: 12px; } }
+    @media (max-width: 430px) { .trace { grid-template-columns: 3.8em minmax(0,1fr) 5.8em; gap: 4px; } }
+  </style>
+</head>
+<body>
+<main id="voltimetro-sim">
+  <header><h1>Simulador de voltímetro</h1><span>FPGA · EP2C5</span></header>
+  <div class="desk">
+    <figure>
+      <canvas id="vga" width="640" height="480" role="img" aria-label="Salida VGA de los tres canales">Vista del voltímetro. Las lecturas también se indican en los controles.</canvas>
+      <figcaption><span>Salida VGA</span><span>640 × 480</span></figcaption>
+    </figure>
+    <section class="controls" aria-labelledby="inputs-title">
+      <h2 id="inputs-title">Tensiones de entrada</h2>
+      <div id="channels"></div>
+      <div class="scale-label" aria-hidden="true"><span>0,00 V</span><span>3,30 V</span></div>
+      <div class="actions"><button type="button" id="sweep" aria-pressed="false">Iniciar barrido</button><button type="button" id="reset">Restablecer</button></div>
+      <p class="sr-only" id="status" aria-live="polite"></p>
+    </section>
+  </div>
+  <details id="sampling">
+    <summary>Muestreo digital</summary>
+    <p class="note">Cada traza muestra las 330 muestras de una ventana. El ciclo 331 guarda la cuenta.</p>
+    <div id="traces"></div>
+  </details>
+  <p class="note">Entradas ideales. El desplazamiento de cero de la red RC depende de la placa.</p>
+  <noscript>Activa JavaScript para usar los controles del simulador.</noscript>
+</main>
+<script>
+(() => {
+  "use strict";
+  const root = document.getElementById("voltimetro-sim");
+  const find = id => root.querySelector("#" + id);
+  const vga = find("vga");
+  const screen = vga.getContext("2d", { alpha: false });
+  const defaults = [42, 165, 330];
+  const inputs = [...defaults];
+  const colors = ["#ffff00", "#00ffff", "#ff00ff"];
+  const pins = [[89, 87], [88, 74], [100, 75]];
+  const range = [], number = [], traces = [], counts = [];
+  const sweep = find("sweep");
+  const samplesPerWindow = 330;
+  let playing = false;
+  let animation = 0;
+  let lastFrame = 0;
+  let phases = [];
+
+  // Filas de los doce caracteres utilizados, en el orden de ROM_EP2C5.vhd.
+  const font = [
+    [0x3c,0x42,0x42,0x42,0x42,0x42,0x3c,0], [0x08,0x18,0x08,0x08,0x08,0x08,0x1c,0],
+    [0x3c,0x42,0x04,0x08,0x10,0x20,0x7e,0], [0x3c,0x42,0x02,0x0c,0x02,0x42,0x3c,0],
+    [0x0c,0x14,0x24,0x44,0x44,0x7e,0x04,0], [0x7c,0x40,0x40,0x3c,0x02,0x42,0x3c,0],
+    [0x3c,0x40,0x40,0x7c,0x42,0x42,0x3c,0], [0x3e,0x02,0x04,0x08,0x10,0x10,0x10,0],
+    [0x1c,0x22,0x22,0x1c,0x22,0x22,0x1c,0], [0x1c,0x22,0x22,0x22,0x1e,0x02,0x1c,0],
+    [0x42,0x42,0x42,0x24,0x24,0x18,0x18,0], [0,0,0,0,0,0x18,0x18,0]
+  ];
+
+  // Fuente ideal de densidad de pulsos. El instrumento cuenta las muestras altas.
+  function measure(centivolts) {
+    const samples = new Uint8Array(samplesPerWindow);
+    let phase = 0, count = 0;
+    for (let i = 0; i < samples.length; i++) {
+      phase += centivolts;
+      if (phase >= samples.length) {
+        phase -= samples.length;
+        samples[i] = 1;
+        count++;
+      }
+    }
+    return { samples, count };
+  }
+
+  function glyph(code, x, y) {
+    for (let row = 0; row < 8; row++) {
+      for (let col = 0; col < 8; col++) {
+        if (font[code][row] & (128 >> col)) screen.fillRect(x + col * 16, y + row * 16, 16, 16);
+      }
+    }
+  }
+  function drawRow(channel, count) {
+    const y = 16 + 160 * channel;
+    const codes = [Math.floor(count / 100), 11, Math.floor(count / 10) % 10, count % 10, 10];
+    screen.fillStyle = "#fff";
+    codes.forEach((code, i) => glyph(code, 128 * i, y));
+    screen.fillStyle = colors[channel];
+    screen.fillRect(155, y + 128, count, 8);
+    for (let x = 156; x <= 484; x += 4) screen.fillRect(x, y + 135, 1, 1);
+  }
+  function drawTrace(channel, samples) {
+    const ctx = traces[channel].getContext("2d");
+    ctx.clearRect(0, 0, 660, 26);
+    ctx.strokeStyle = colors[channel];
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, samples[0] ? 4.5 : 21.5);
+    samples.forEach((sample, i) => {
+      const y = sample ? 4.5 : 21.5;
+      ctx.lineTo(2*i + .5, y);
+      ctx.lineTo(2*i + 2, y);
+    });
+    ctx.stroke();
+  }
+  function render() {
+    screen.fillStyle = "#000";
+    screen.fillRect(0, 0, 640, 480);
+    const readings = inputs.map(measure);
+    readings.forEach(({samples, count}, i) => {
+      drawRow(i, count);
+      if (find("sampling").open) drawTrace(i, samples);
+      counts[i].value = count + " / 330";
+      range[i].setAttribute("aria-valuetext", (count / 100).toFixed(2) + " V");
+    });
+    vga.setAttribute("aria-label", "Salida VGA. " + readings.map(({count}, i) =>
+      "Canal " + (i + 1) + ": " + (count / 100).toFixed(2) + " V").join(". "));
+  }
+  function updateControls(skipNumber = -1) {
+    inputs.forEach((value, i) => {
+      range[i].value = String(value / 100);
+      if (i !== skipNumber) number[i].value = (value / 100).toFixed(2);
+    });
+    render();
+  }
+  function stopSweep() {
+    playing = false;
+    cancelAnimationFrame(animation);
+    sweep.textContent = "Iniciar barrido";
+    sweep.setAttribute("aria-pressed", "false");
+  }
+  for (let i = 0; i < inputs.length; i++) {
+    const panel = document.createElement("div");
+    panel.className = "channel";
+    panel.style.setProperty("--channel", colors[i]);
+    panel.innerHTML = `<div class="channel-head"><div><label for="slider-${i}">Canal ${i+1}</label>
+      <span class="pins">Entrada P${pins[i][0]} · Retorno P${pins[i][1]}</span></div>
+      <div class="volts"><input id="num-${i}" aria-label="Tensión del canal ${i+1} en voltios" type="number" inputmode="decimal" min="0" max="3.30" step="0.01"><span class="unit">V</span></div></div>
+      <input id="slider-${i}" type="range" min="0" max="3.30" step="0.01">`;
+    find("channels").append(panel);
+    range[i] = find("slider-" + i);
+    number[i] = find("num-" + i);
+    range[i].addEventListener("input", () => {
+      stopSweep();
+      inputs[i] = Math.round(range[i].valueAsNumber * 100);
+      updateControls();
+    });
+    number[i].addEventListener("input", () => {
+      stopSweep();
+      const value = number[i].valueAsNumber;
+      if (Number.isFinite(value) && number[i].validity.valid) {
+        inputs[i] = Math.round(value * 100);
+        updateControls(i);
+      }
+    });
+    number[i].addEventListener("blur", () => {
+      const value = number[i].valueAsNumber;
+      if (Number.isFinite(value)) inputs[i] = Math.max(0, Math.min(330, Math.round(value * 100)));
+      updateControls();
+    });
+    const trace = document.createElement("div");
+    trace.className = "trace";
+    trace.innerHTML = `<span>Canal ${i+1}</span><canvas width="660" height="26" aria-hidden="true"></canvas><output aria-live="off" aria-label="Muestras altas del canal ${i+1}"></output>`;
+    find("traces").append(trace);
+    traces[i] = trace.querySelector("canvas");
+    counts[i] = trace.querySelector("output");
+  }
+  function advance(now) {
+    if (!playing) return;
+    const delta = (now - lastFrame) / 1000;
+    if (delta >= 1/30) {
+      const rates = [30, 48, 66];
+      lastFrame = now;
+      phases = phases.map((phase, i) => (phase + delta * rates[i]) % 660);
+      phases.forEach((phase, i) => { inputs[i] = Math.round(330 - Math.abs(phase - 330)); });
+      updateControls();
+    }
+    animation = requestAnimationFrame(advance);
+  }
+  sweep.addEventListener("click", () => {
+    if (playing) { stopSweep(); return; }
+    phases = [...inputs];
+    lastFrame = performance.now();
+    playing = true;
+    sweep.setAttribute("aria-pressed", "true");
+    sweep.textContent = "Detener barrido";
+    animation = requestAnimationFrame(advance);
+  });
+  find("reset").addEventListener("click", () => {
+    stopSweep();
+    defaults.forEach((value, i) => { inputs[i] = value; });
+    updateControls();
+    find("status").textContent = "Tensiones iniciales restablecidas.";
+  });
+  find("sampling").addEventListener("toggle", render);
+  updateControls();
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,5 @@
-----------------------------------------------------------------------------------
--- bcd_counter_3d : contador BCD de 3 decadas (000..999)
---   q_out = centenas & decenas & unidades
---   El carry de cada decada habilita a la siguiente (ripple sincronico).
-----------------------------------------------------------------------------------
+-- Contador BCD de 000 a 999. Las tres décadas usan el mismo reloj.
+-- El acarreo de las unidades habilita las decenas y el de las decenas habilita las centenas.
 entity bcd_counter_3d is
     port (
         clk   : in  bit;

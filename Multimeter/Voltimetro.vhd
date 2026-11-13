@@ -1,4 +1,4 @@
--- Bloque de tres canales que corresponde a la interfaz del top-level adjunto.
+-- Los tres canales comparten la ventana de medición y envían sus lecturas al controlador VGA.
 entity Voltimetro is
     port (
         clk_i, rst_i : in bit;

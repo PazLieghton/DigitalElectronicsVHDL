@@ -1,20 +1,14 @@
---vsim sigma_delta_tb
---add wave *
---run 1us
---wave zoom ful ACORDATE PARA SIMULAR
-
-
+-- El biestable muestrea el nivel lógico del pin conectado a la red RC.
 entity sigma_delta is
     port (
         clk           : in bit;
         rst           : in bit;
-        data_volt_in  : in bit; -- Analog input from comparator
-        data_volt_out : out bit -- PWM feedback to RC filter
+        data_volt_in  : in bit;
+        data_volt_out : out bit
     );
 end sigma_delta;
 
 architecture structural of sigma_delta is
-    -- Declare the teacher's FFD
     component ffd is
         port(
             clk : in bit;
@@ -24,8 +18,7 @@ architecture structural of sigma_delta is
         );
     end component;
 begin
-    -- The modulator is literally just the FFD
-    ffd_inst: ffd 
+    ffd_inst: ffd
         port map(
             clk => clk,
             rst => rst,

@@ -57,7 +57,6 @@ set_global_assignment -name VHDL_FILE sigma_delta.vhd
 set_global_assignment -name VHDL_FILE ROM_EP2C5.vhd
 set_global_assignment -name VHDL_FILE reg_12bit.vhd
 set_global_assignment -name VHDL_FILE mux_logic.vhd
-set_global_assignment -name VHDL_FILE ffd_en.vhd
 set_global_assignment -name VHDL_FILE ffd.vhd
 set_global_assignment -name VHDL_FILE contador_binario10.vhd
 set_global_assignment -name VHDL_FILE canal_medicion.vhd
@@ -66,6 +65,7 @@ set_global_assignment -name VHDL_FILE bcd_counter_3d.vhd
 set_global_assignment -name VHDL_FILE bcd_counter.vhd
 set_global_assignment -name VHDL_FILE acyiib_impl.vhd
 set_global_assignment -name VHDL_FILE acyiib.vhd
+set_global_assignment -name SDC_FILE FinalMulti.sdc
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "USE AS REGULAR IO"

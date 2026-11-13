@@ -1,11 +1,6 @@
-----------------------------------------------------------------------------------
--- bin_counter : temporizador de la ventana de medicion (compartido por los canales)
---   Cuenta 0..330 y vuelve a 0  ->  periodo = 331 ciclos de reloj.
---   tc = '1' durante el ciclo en que cuenta 330 (fin de ventana).
---   Durante los 330 ciclos anteriores (0..329) el contador BCD cuenta "unos", asi
---   que  cuentas = 330 * (densidad de unos) = Vin * 100  ->  X.XX V directo.
---   330 = 1 0100 1010b  -> primera vez que q(8), q(6), q(3) y q(1) valen '1'.
-----------------------------------------------------------------------------------
+-- Temporizador común a los tres canales. Los estados 0 a 329 permiten contar
+-- 330 muestras. En el estado 330 se guarda la lectura y comienza otra ventana.
+-- Para una escala de 3,30 V, cada muestra alta cuenta como una centésima de voltio.
 entity bin_counter is
     port (
         clk : in  bit;
@@ -21,10 +16,11 @@ architecture structural of bin_counter is
     signal q, d, t       : bit_vector(8 downto 0);
     signal tc_int, rst_int : bit;
 begin
-    tc_int  <= q(8) and q(6) and q(3) and q(1);   -- 330
-    rst_int <= rst or tc_int;                     -- reset sincronico al llegar a 330
+    -- 330 es el primer estado en el que estos cuatro bits valen uno.
+    tc_int  <= q(8) and q(6) and q(3) and q(1);
+    rst_int <= rst or tc_int;
 
-    -- Contador binario con FFs tipo T (D = Q xor T)
+    -- Cada bit conmuta cuando todos los bits inferiores valen uno.
     t(0) <= '1';
     t(1) <= q(0);
     t(2) <= q(1) and q(0);
