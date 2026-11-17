@@ -15,7 +15,8 @@ architecture estructural of Vga_lab is
     signal fin_linea, fin_cuadro, captura_cuadro : bit;
     signal reg1_frame, reg2_frame, reg3_frame : bit_vector(11 downto 0);
     signal font_col, font_row : bit_vector(2 downto 0);
-    signal visible, hs, vs, visible_q : bit;
+    signal visible, hs, vs, visible_q, hs_q, vs_q : bit;
+    signal rgb_salida : bit_vector(2 downto 0);
     signal caracter : bit_vector(3 downto 0);
     signal punto_rom : bit;
 
@@ -96,9 +97,9 @@ begin
     -- La ROM entrega el punto un ciclo después. La visibilidad, el color y los
     -- sincronismos llevan el mismo retardo para que correspondan al mismo píxel.
     ret_hs : entity work.ffd(ffd_arq)
-        port map (clk => clk_i, rst => '0', d => hs, q => hs_o);
+        port map (clk => clk_i, rst => '0', d => hs, q => hs_q);
     ret_vs : entity work.ffd(ffd_arq)
-        port map (clk => clk_i, rst => '0', d => vs, q => vs_o);
+        port map (clk => clk_i, rst => '0', d => vs, q => vs_q);
     ret_visible : entity work.ffd(ffd_arq)
         port map (clk => clk_i, rst => '0', d => visible, q => visible_q);
     ret_rgb : for i in rgb_barra'range generate
@@ -106,7 +107,20 @@ begin
             port map (clk => clk_i, rst => '0', d => rgb_barra(i), q => rgb_barra_q(i));
     end generate;
 
-    red_o <= visible_q and (punto_rom or rgb_barra_q(2));
-    grn_o <= visible_q and (punto_rom or rgb_barra_q(1));
-    blu_o <= visible_q and (punto_rom or rgb_barra_q(0));
+    rgb_salida(2) <= visible_q and (punto_rom or rgb_barra_q(2));
+    rgb_salida(1) <= visible_q and (punto_rom or rgb_barra_q(1));
+    rgb_salida(0) <= visible_q and (punto_rom or rgb_barra_q(0));
+
+    -- Registrar la mezcla final evita propagar transitorios de las compuertas RGB.
+    -- Los sincronismos reciben el mismo ciclo adicional de retardo.
+    salida_roja : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => rgb_salida(2), q => red_o);
+    salida_verde : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => rgb_salida(1), q => grn_o);
+    salida_azul : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => rgb_salida(0), q => blu_o);
+    salida_hs : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => hs_q, q => hs_o);
+    salida_vs : entity work.ffd(ffd_arq)
+        port map (clk => clk_i, rst => '0', d => vs_q, q => vs_o);
 end estructural;

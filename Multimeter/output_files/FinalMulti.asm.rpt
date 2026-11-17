@@ -1,5 +1,5 @@
 Assembler report for FinalMulti
-Wed Nov 11 22:57:54 2026
+Tue Nov 17 13:08:53 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.sof
-  6. Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.pof
+  5. Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.sof
+  6. Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Nov 11 22:57:54 2026 ;
+; Assembler Status      ; Successful - Tue Nov 17 13:08:53 2026 ;
 ; Revision Name         ; FinalMulti                            ;
 ; Top-level Entity Name ; acyiib                                ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                                  ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                                  ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.sof ;
-; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.pof ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.sof ;
+; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.pof ;
++---------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.sof ;
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                             ;
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP2C5T144C8                                                                                                                                         ;
-; JTAG usercode  ; 0x000AA28E                                                                                                                                          ;
-; Checksum       ; 0x000AA28E                                                                                                                                          ;
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                  ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP2C5T144C8                                                                                                                              ;
+; JTAG usercode  ; 0x000AB16C                                                                                                                               ;
+; Checksum       ; 0x000AB16C                                                                                                                               ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/output_files/FinalMulti.pof ;
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                                                                         ;
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Device             ; EPCS4                                                                                                                                           ;
-; JTAG usercode      ; 0x00000000                                                                                                                                      ;
-; Checksum           ; 0x074D996C                                                                                                                                      ;
-; Compression Ratio  ; 3                                                                                                                                               ;
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/output_files/FinalMulti.pof ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                              ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS4                                                                                                                                ;
+; JTAG usercode      ; 0x00000000                                                                                                                           ;
+; Checksum           ; 0x074BCDF5                                                                                                                           ;
+; Compression Ratio  ; 3                                                                                                                                    ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Nov 11 22:57:52 2026
+    Info: Processing started: Tue Nov 17 13:08:49 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off FinalMulti -c FinalMulti
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4545 megabytes
-    Info: Processing ended: Wed Nov 11 22:57:54 2026
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Tue Nov 17 13:08:53 2026
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

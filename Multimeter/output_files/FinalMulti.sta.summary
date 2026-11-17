@@ -7,7 +7,7 @@ Slack : 19.235
 TNS   : 0.000
 
 Type  : Slow Model Setup 'clk_25'
-Slack : 23.322
+Slack : 24.199
 TNS   : 0.000
 
 Type  : Slow Model Hold 'clk_25'
@@ -31,7 +31,7 @@ Slack : 19.665
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clk_25'
-Slack : 34.933
+Slack : 35.266
 TNS   : 0.000
 
 Type  : Fast Model Hold 'clk_25'

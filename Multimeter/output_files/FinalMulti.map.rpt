@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FinalMulti
-Wed Nov 11 22:57:38 2026
+Tue Nov 17 13:08:32 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -19,31 +19,36 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  11. Parameter Settings for User Entity Instance: Top-level Entity: |acyiib
  12. Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal
  13. Parameter Settings for User Entity Instance: Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical
- 14. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:0:ff"
- 15. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:1:ff"
- 16. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:2:ff"
- 17. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_visible"
- 18. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_vs"
- 19. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_hs"
- 20. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3"
- 21. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2"
- 22. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1"
- 23. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical"
- 24. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal"
- 25. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1"
- 26. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f"
- 27. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f"
- 28. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f"
- 29. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f"
- 30. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f"
- 31. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f"
- 32. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f"
- 33. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f"
- 34. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f"
- 35. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|ffd_en:ffd_i"
- 36. Port Connectivity Checks: "Voltimetro_toplevel:nucleo"
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 14. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_vs"
+ 15. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_hs"
+ 16. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_azul"
+ 17. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_verde"
+ 18. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_roja"
+ 19. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:0:ff"
+ 20. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:1:ff"
+ 21. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:\ret_rgb:2:ff"
+ 22. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_visible"
+ 23. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_vs"
+ 24. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_hs"
+ 25. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame3"
+ 26. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame2"
+ 27. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1"
+ 28. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:vertical"
+ 29. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|contador_binario10:horizontal"
+ 30. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|canal_medicion:canal1|bcd_counter_3d:contador|bcd_counter:H1"
+ 31. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:8:f"
+ 32. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:7:f"
+ 33. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:6:f"
+ 34. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:5:f"
+ 35. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:4:f"
+ 36. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:3:f"
+ 37. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:2:f"
+ 38. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:1:f"
+ 39. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|bin_counter:ventana|ffd_en:\ff_gen:0:f"
+ 40. Port Connectivity Checks: "Voltimetro_toplevel:nucleo|ffd_en:ffd_i"
+ 41. Port Connectivity Checks: "Voltimetro_toplevel:nucleo"
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -69,15 +74,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 11 22:57:38 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 17 13:08:32 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FinalMulti                                      ;
 ; Top-level Entity Name              ; acyiib                                          ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 374                                             ;
+; Total logic elements               ; 376                                             ;
 ;     Total combinational functions  ; 299                                             ;
-;     Dedicated logic registers      ; 160                                             ;
-; Total registers                    ; 160                                             ;
+;     Dedicated logic registers      ; 165                                             ;
+; Total registers                    ; 165                                             ;
 ; Total pins                         ; 48                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -182,27 +187,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Voltimetro_toplevel.vhd          ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/Voltimetro_toplevel.vhd ;         ;
-; Voltimetro.vhd                   ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/Voltimetro.vhd          ;         ;
-; Vga_lab.vhd                      ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/Vga_lab.vhd             ;         ;
-; sigma_delta.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/sigma_delta.vhd         ;         ;
-; ROM_EP2C5.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/ROM_EP2C5.vhd           ;         ;
-; reg_12bit.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/reg_12bit.vhd           ;         ;
-; mux_logic.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/mux_logic.vhd           ;         ;
-; ffd.vhd                          ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/ffd.vhd                 ;         ;
-; contador_binario10.vhd           ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/contador_binario10.vhd  ;         ;
-; canal_medicion.vhd               ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/canal_medicion.vhd      ;         ;
-; bin_counter.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/bin_counter.vhd         ;         ;
-; bcd_counter_3d.vhd               ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/bcd_counter_3d.vhd      ;         ;
-; bcd_counter.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/bcd_counter.vhd         ;         ;
-; acyiib_impl.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/acyiib_impl.vhd         ;         ;
-; acyiib.vhd                       ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/final-rtl-d4a4fc66/normal/acyiib.vhd              ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
+; Voltimetro_toplevel.vhd          ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/Voltimetro_toplevel.vhd ;         ;
+; Voltimetro.vhd                   ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/Voltimetro.vhd          ;         ;
+; Vga_lab.vhd                      ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/Vga_lab.vhd             ;         ;
+; sigma_delta.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/sigma_delta.vhd         ;         ;
+; ROM_EP2C5.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/ROM_EP2C5.vhd           ;         ;
+; reg_12bit.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/reg_12bit.vhd           ;         ;
+; mux_logic.vhd                    ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/mux_logic.vhd           ;         ;
+; ffd.vhd                          ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/ffd.vhd                 ;         ;
+; contador_binario10.vhd           ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/contador_binario10.vhd  ;         ;
+; canal_medicion.vhd               ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/canal_medicion.vhd      ;         ;
+; bin_counter.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/bin_counter.vhd         ;         ;
+; bcd_counter_3d.vhd               ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/bcd_counter_3d.vhd      ;         ;
+; bcd_counter.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/bcd_counter.vhd         ;         ;
+; acyiib_impl.vhd                  ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/acyiib_impl.vhd         ;         ;
+; acyiib.vhd                       ; yes             ; User VHDL File  ; C:/Users/pazli/.codex/visualizations/2026/11/11/01a1cc0e-f69c-7850-99ec-169db8fe460e/vga-registered/acyiib.vhd              ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -210,7 +215,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimated Total logic elements              ; 374                                                   ;
+; Estimated Total logic elements              ; 376                                                   ;
 ;                                             ;                                                       ;
 ; Total combinational functions               ; 299                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                       ;
@@ -222,16 +227,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 297                                                   ;
 ;     -- arithmetic mode                      ; 2                                                     ;
 ;                                             ;                                                       ;
-; Total registers                             ; 160                                                   ;
-;     -- Dedicated logic registers            ; 160                                                   ;
+; Total registers                             ; 165                                                   ;
+;     -- Dedicated logic registers            ; 165                                                   ;
 ;     -- I/O registers                        ; 0                                                     ;
 ;                                             ;                                                       ;
 ; I/O pins                                    ; 48                                                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                     ;
 ; Maximum fan-out node                        ; Voltimetro_toplevel:nucleo|ffd_en:ffd_i|ffd:base_ff|q ;
-; Maximum fan-out                             ; 160                                                   ;
-; Total fan-out                               ; 1470                                                  ;
-; Average fan-out                             ; 2.90                                                  ;
+; Maximum fan-out                             ; 165                                                   ;
+; Total fan-out                               ; 1480                                                  ;
+; Average fan-out                             ; 2.89                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
 
@@ -240,10 +245,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Library Name ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |acyiib                                     ; 299 (0)           ; 160 (0)      ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |acyiib                                                                                                                              ; work         ;
-;    |Voltimetro_toplevel:nucleo|             ; 299 (0)           ; 160 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo                                                                                                   ; work         ;
-;       |Voltimetro:voltimetro_i|             ; 298 (0)           ; 159 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i                                                                           ; work         ;
-;          |Vga_lab:pantalla|                 ; 212 (35)          ; 75 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla                                                          ; work         ;
+; |acyiib                                     ; 299 (0)           ; 165 (0)      ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |acyiib                                                                                                                              ; work         ;
+;    |Voltimetro_toplevel:nucleo|             ; 299 (0)           ; 165 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo                                                                                                   ; work         ;
+;       |Voltimetro:voltimetro_i|             ; 298 (0)           ; 164 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i                                                                           ; work         ;
+;          |Vga_lab:pantalla|                 ; 212 (35)          ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla                                                          ; work         ;
 ;             |ROM:fuente|                    ; 69 (69)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ROM:fuente                                               ; work         ;
 ;             |bcd_counter_3d:contador_barra| ; 24 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|bcd_counter_3d:contador_barra                            ; work         ;
 ;                |bcd_counter:H1|             ; 7 (3)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|bcd_counter_3d:contador_barra|bcd_counter:H1             ; work         ;
@@ -289,6 +294,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |ffd:ret_hs|                    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_hs                                               ; work         ;
 ;             |ffd:ret_visible|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_visible                                          ; work         ;
 ;             |ffd:ret_vs|                    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:ret_vs                                               ; work         ;
+;             |ffd:salida_azul|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_azul                                          ; work         ;
+;             |ffd:salida_hs|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_hs                                            ; work         ;
+;             |ffd:salida_roja|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_roja                                          ; work         ;
+;             |ffd:salida_verde|              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_verde                                         ; work         ;
+;             |ffd:salida_vs|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_vs                                            ; work         ;
 ;             |mux_logic:texto|               ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|mux_logic:texto                                          ; work         ;
 ;             |reg_12bit:frame1|              ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1                                         ; work         ;
 ;                |ffd_en:\ff_gen:0:f|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acyiib|Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|reg_12bit:frame1|ffd_en:\ff_gen:0:f                      ; work         ;
@@ -527,7 +537,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 160   ;
+; Total registers                              ; 165   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -630,6 +640,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; last           ; 1000001100 ; Unsigned Binary                                                                                                ;
 +----------------+------------+----------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_vs" ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_hs" ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_azul" ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                               ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                          ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_verde" ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Voltimetro_toplevel:nucleo|Voltimetro:voltimetro_i|Vga_lab:pantalla|ffd:salida_roja" ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                               ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                          ;
++------+-------+----------+---------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -846,7 +901,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -856,7 +911,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Nov 11 22:57:23 2026
+    Info: Processing started: Tue Nov 17 13:08:15 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalMulti -c FinalMulti
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file voltimetro_toplevel.vhd
@@ -944,15 +999,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "p2_in[15]"
     Warning (15610): No output dependent on input pin "p2_in[14]"
-Info (21057): Implemented 422 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 424 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 0 output pins
     Info (21060): Implemented 43 bidirectional pins
-    Info (21061): Implemented 374 logic cells
+    Info (21061): Implemented 376 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
     Info: Peak virtual memory: 4637 megabytes
-    Info: Processing ended: Wed Nov 11 22:57:38 2026
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Processing ended: Tue Nov 17 13:08:32 2026
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:12
 
 
